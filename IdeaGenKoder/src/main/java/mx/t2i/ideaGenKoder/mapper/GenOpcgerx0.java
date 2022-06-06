@@ -305,7 +305,7 @@ public class GenOpcgerx0 {
         }
 
         if (file.contains("def") || file.contains("DEF")) {
-            String cabeceraSeccion = "";
+            String cabeceraSeccion;
 
             String[] cases = {
                     "entityObjMap"

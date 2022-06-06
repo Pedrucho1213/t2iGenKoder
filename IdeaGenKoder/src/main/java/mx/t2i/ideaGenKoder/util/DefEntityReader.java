@@ -11,6 +11,7 @@ import java.io.IOException;
 public class DefEntityReader extends GenOpcgerx0 {
 
 
+/*
     public void inputData(String file) {
 
         String cabeceraSeccion = "";
@@ -206,6 +207,7 @@ public class DefEntityReader extends GenOpcgerx0 {
             e.printStackTrace();
         }
     }
+*/
 
 
 }
