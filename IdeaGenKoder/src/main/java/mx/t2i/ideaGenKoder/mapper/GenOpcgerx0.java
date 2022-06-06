@@ -141,373 +141,377 @@ public class GenOpcgerx0 {
         dataSourceWebService = new HashMap<>();
 
         if (file.contains("json") || file.contains("JSON")) {
-            try {
-                String dato = "";
-                String tipo = "";
-                String valor = "";
-                String itemActual = "";
-
-
-                JsonFactory factory = new JsonFactory();
-
-                // Create JsonParser
-                File archivoJson = new File(file);
-
-                JsonParser parser = factory.createParser(archivoJson);
-                //20202-06-02 ggm: Para leer elarchivo se dividia n secciones para los Arrays y para los objetos
-                //1. Lectura de imports
-                JsonToken token = parser.nextToken(); // Read first object i.e. {
-                System.out.println("Primer Caracter : " + parser.getText());
-
-                token = parser.nextToken();
-                System.out.println("segundo Caracter : " + parser.getText());
-                token = parser.nextToken();
-                if (token == JsonToken.FIELD_NAME && "importList".equals(parser.getCurrentName())) {
-
-                    System.out.println("Los imports son - ");
-                    token = parser.nextToken(); // // Read left bracket i.e. [
-                    // Loop to print array elements until right bracket i.e ]
-                    while (token != JsonToken.END_ARRAY) {
-                        token = parser.nextToken();
-
-                        if (token == JsonToken.VALUE_STRING) {
-                            System.out.println(parser.getText());
-                            importArray.add(new ImportArray(parser.getText()));
-
-                        }
-                    }
-                    System.out.println("importArray --" + importArray);
-                }
-
-                token = parser.nextToken();
-                token = parser.nextToken();
-                token = parser.nextToken();
-                //token = parser.nextToken();
-                System.out.println("x Caracter  " + parser.getText());
-                //token = parser.nextToken();
-                //System.out.println("y Caracter  " + parser.getText());
-
-                if (token == JsonToken.FIELD_NAME && "respListObjMap".equals(parser.getCurrentName())) {
-
-                    System.out.println("Objeto respListObjMap  - ");
-                    token = parser.nextToken(); // // Read left bracket i.e. [
-                    // Loop to print array elements until right bracket i.e ]
-                    while (token != JsonToken.END_OBJECT) {
-                        token = parser.nextToken();
-
-                        if (token == JsonToken.VALUE_STRING) {
-                            System.out.println("Valores " + parser.getCurrentName() + " " + parser.getText());
-                            respListDefMap.put(parser.getCurrentName(), parser.getText());
-                        }
-                    }
-                    System.out.println("respListDefMap --X" + respListDefMap);
-                }
-
-                token = parser.nextToken();
-                token = parser.nextToken();
-                token = parser.nextToken();
-
-                //token = parser.nextToken();
-                System.out.println("Antes de seccion de search  " + parser.getText());
-                if (token == JsonToken.FIELD_NAME && "searchAttributes".equals(parser.getCurrentName())) {
-
-                    System.out.println("Objeto searchAttributes  - ");
-                    token = parser.nextToken(); // // Read left bracket i.e. [
-                    // Loop to print array elements until right bracket i.e ]
-                    while (token != JsonToken.END_ARRAY) {
-                        //  token = parser.nextToken();
-                        //if (token != JsonToken.END_ARRAY)
-                        //	  break;
-
-
-                        if (token == JsonToken.VALUE_STRING && parser.getCurrentName() != "]") {
-                            //System.out.println( "Valores Att " +parser.getCurrentName()+" "+parser.getText());
-                            itemActual = parser.getCurrentName();
-                            if (itemActual == "nombre")
-                                dato = parser.getText();
-                                //System.out.println("dato...".dato);
-                            else if (itemActual == "tipo")
-                                tipo = parser.getText();
-                            else if (itemActual == "valor")
-                                valor = parser.getText();
-                            if ((dato != "" && tipo != "" && valor != "") && (dato != null && tipo != null && valor != null)) {
-                                fieldAttributes.add(new FtlAttribute(dato, tipo, valor));
-                                dato = "";
-                                tipo = "";
-                                valor = "";
-                                //System.out.println("fieldAttributes -- "+fieldAttributes);
-                            }
-                            if (parser.nextToken().equals(']')) {
-                                break;
-                            }
-                        }
-                        //System.out.println("parser.nextToken()..........."+parser.nextToken()); // parser.getCurrentName() != "]"
-                        token = parser.nextToken();
-                        if (parser.currentToken() == JsonToken.END_ARRAY) {
-                            break;
-                        }
-                    }
-                    System.out.println("searchAttributes final -- " + fieldAttributes);
-                }
-
-                token = parser.nextToken();
-                token = parser.nextToken();
-                token = parser.nextToken();
-
-                //token = parser.nextToken();
-                System.out.println("Antes de seccion de attributes  " + parser.getText());
-                if (token == JsonToken.FIELD_NAME && "attributesObjMap".equals(parser.getCurrentName())) {
-
-                    System.out.println("Objeto attributesObjMap  - ");
-                    token = parser.nextToken(); // // Read left bracket i.e. [
-                    // Loop to print array elements until right bracket i.e ]
-                    while (token != JsonToken.END_ARRAY) {
-                        //  token = parser.nextToken();
-                        //if (token != JsonToken.END_ARRAY)
-                        //	  break;
-
-
-                        if (token == JsonToken.VALUE_STRING && parser.getCurrentName() != "]") {
-                            //System.out.println( "Valores Att " +parser.getCurrentName()+" "+parser.getText());
-                            itemActual = parser.getCurrentName();
-                            if (itemActual == "nombre")
-                                dato = parser.getText();
-                                //System.out.println("dato...".dato);
-                            else if (itemActual == "tipo")
-                                tipo = parser.getText();
-                            else if (itemActual == "valor")
-                                valor = parser.getText();
-                            if ((dato != "" && tipo != "" && valor != "") && (dato != null && tipo != null && valor != null)) {
-                                fieldAttributes.add(new FtlAttribute(dato, tipo, valor));
-                                dato = "";
-                                tipo = "";
-                                valor = "";
-                                //System.out.println("fieldAttributes -- "+fieldAttributes);
-                            }
-                            if (parser.nextToken().equals(']')) {
-                                break;
-                            }
-                        }
-                        //System.out.println("parser.nextToken()..........."+parser.nextToken()); // parser.getCurrentName() != "]"
-                        token = parser.nextToken();
-                        if (parser.currentToken() == JsonToken.END_ARRAY) {
-                            break;
-                        }
-                    }
-                    System.out.println("fieldAttributes final -- " + fieldAttributes);
-                }
-
-                parser.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            this.loadJsonFile(file);
         }
 
         if (file.contains("def") || file.contains("DEF")) {
-            String cabeceraSeccion;
-
-            String[] cases = {
-                    "entityObjMap"
-                    , "entityPojoObjMap"
-                    , "coreServiceObjMap"
-                    , "resultListObjMap"
-                    , "reqListObjMap"
-                    , "respListObjMap"
-                    , "entityServiceObjMap"
-                    , "entityDTOObjMap"
-                    , "entityResourceObjMap"
-                    , "attributesObjMap"
-                    , "searchAttributes"
-                    , "CoreService"
-                    , "BizService"
-                    , "WebService"
-                    , "importList"
-            };
-            int i, j;
-            j = 0;
-
-            try (
-                    BufferedReader br = new BufferedReader(new FileReader(file))) {
-                String line;
-
-                while ((line = br.readLine()) != null) {
-                    if (line.contains("#")) {
-                        cabeceraSeccion = line.substring(1, line.length());
-                        System.out.println("Cabecera: " + cabeceraSeccion);
-                        j = 100;
-                        for (i = 0; i < cases.length; i++) {
-                            if (cabeceraSeccion.equals(cases[i]))
-                                j = i;
-                        }
-                        System.out.println("indice out: " + j);
-                        line = br.readLine();
-                        switch (j) {
-                            case 0: //
-                                System.out.println("entityDefMap");
-                                while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                    System.out.println("Valor de: " + cabeceraSeccion + " " + line);
-                                    entityDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
-                                    line = br.readLine();
-                                }
-                                System.out.println(entityDefMap.keySet());
-                                break;
-                            case 1: //
-                                System.out.println("entityPojoDefMap");
-                                while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                    System.out.println("Valor de: " + cabeceraSeccion + " " + line);
-                                    entityPojoDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
-                                    line = br.readLine();
-                                }
-                                System.out.println(entityPojoDefMap.keySet());
-                                break;
-                            case 2:
-                                System.out.println("coreServiceDefMap");
-                                while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                    System.out.println("Valor de: " + cabeceraSeccion + " " + line);
-                                    coreServiceDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
-                                    line = br.readLine();
-                                }
-                                System.out.println(coreServiceDefMap.keySet());
-                                break;
-                            case 3: //
-                                while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                    System.out.println("Valor de: " + cabeceraSeccion + " " + line);
-                                    resultListDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
-                                    line = br.readLine();
-                                }
-                                System.out.println(resultListDefMap.keySet());
-                                break;
-                            case 4:
-                                System.out.println("reqListDefMap");
-                                while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                    System.out.println("Valor de: " + cabeceraSeccion + " " + line);
-                                    reqListDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
-                                    line = br.readLine();
-                                }
-                                System.out.println(reqListDefMap.keySet());
-                                break;
-                            case 5:
-                                System.out.println("#respListDefMap");
-                                try {
-                                    while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                        System.out.println("Valor de: " + cabeceraSeccion + " " + line);
-                                        respListDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
-
-                                        line = br.readLine();
-                                    }
-                                    System.out.println(respListDefMap.keySet());
-                                    System.out.println(respListDefMap.values());
-                                    System.out.println(respListDefMap);
-                                } catch (IOError e) {
-                                    System.out.println("error : " + e.toString());
-                                }
-
-                                //String mStringArray[] = respListDefMap;//{ "String1", "String2" };
-                                //JSONArray mJSONArray = new JSONArray(Arrays.asList(mStringArray));
-                                //System.out.println(mJSONArray);
-                                break;
-                            case 6:
-                                System.out.println("#entityServiceDefMap");
-                                while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                    System.out.println("Valor de: " + cabeceraSeccion + " " + line);
-                                    entityServiceDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
-                                    line = br.readLine();
-                                }
-                                System.out.println(respListDefMap.keySet());
-                                break;
-                            case 7:
-                                System.out.println("entityDTODefMap");
-                                while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                    System.out.println("Valor de: " + cabeceraSeccion + " " + line);
-                                    entityDTODefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
-                                    line = br.readLine();
-                                }
-                                System.out.println(entityDTODefMap.keySet());
-                                break;
-                            case 8:
-                                System.out.println("entityResourceDefMap");
-                                while (line.contains(":") && !(line.contains("#"))) {//while (line.contains(",")) {
-                                    System.out.println("Valor de: " + cabeceraSeccion + " " + line);
-                                    entityResourceDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
-                                    line = br.readLine();
-                                }
-                                System.out.println(entityResourceDefMap.keySet());
-                                break;
-                            case 9:
-                                this.readAttributes(br, cabeceraSeccion, line, fieldAttributes);
-                                System.out.println(attributesDefMap.keySet());
-                                System.out.println(attributesDefMap.values());
-                                break;
-                            case 10:
-                                readAttributes(br, cabeceraSeccion, line, searchAttributes);
-                                System.out.println(attributesDefMap.keySet());
-                                System.out.println(attributesDefMap.values());
-                                break;
-                            case 11:
-                                System.out.println("dataFileCore");
-                                while (line.contains(":") && !(line.contains("#"))) {
-                                    System.out.println("Valor de: " + cabeceraSeccion);
-                                    dataFileCore.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
-                                    line = br.readLine();
-                                    System.out.println("siguiente ftl de: " + line);
-                                }
-                                System.out.println(dataFileCore.keySet());
-                                System.out.println(dataFileCore.get("entityFtlFileName"));
-                                break;
-                            case 12: //
-                                System.out.println("Biz");
-                                while (line.contains(":") && !(line.contains("#"))) { //line.contains("entity") &&
-                                    System.out.println("ftl de: " + cabeceraSeccion + " " + line);
-                                    dataFileBizService.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
-                                    line = br.readLine();
-                                }
-                                System.out.println(dataFileBizService.keySet());
-                                System.out.println(dataFileBizService.values());
-                                break;
-                            case 13: //
-                                System.out.println("WebServer");
-                                while (line.contains(":") && !(line.contains("#"))) {//line.contains("entity") &&
-                                    System.out.println("Valor de: " + cabeceraSeccion);
-                                    dataFileWebService.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
-                                    line = br.readLine();
-                                }
-                                System.out.println(dataFileWebService.keySet());
-                                System.out.println(dataFileWebService.values());
-                                break;
-                            case 14: //
-                                System.out.println("importList");
-                                while ((line.length() > 0) || !(line.contains("#"))) {//line.contains("entity") &&
-                                    if (line.length() == 0)
-                                        break;
-                                    System.out.println("Valor de: " + cabeceraSeccion);
-                                    //fieldAttributes.add(new FtlAttribute(tipo, dato, valor));
-                                    importArray.add(new ImportArray(line));
-                                    //dataImportList.put(line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
-                                    line = br.readLine();
-                                    if (line.length() == 0)
-                                        break;
-                                }
-                                System.out.println(importArray);
-                                //System.out.println(JSON.Stringfy (importArray));
-
-                                //System.out.println(dataFileWebService.values());
-                                break;
-                            default:
-                                System.out.println("DEFAULT ");
-                        }
-                    }
-                    //System.out.println("Fin de case");
-                }
-            } catch (IOException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
-            }
+            this.loadDefFile(file);
         }
 
 
     }
+
+    public void loadDefFile(String file) {
+
+        String cabeceraSeccion = "";
+
+        String[] cases = {
+                "entityObjMap"
+                , "entityPojoObjMap"
+                , "coreServiceObjMap"
+                , "resultListObjMap"
+                , "reqListObjMap"
+                , "respListObjMap"
+                , "entityServiceObjMap"
+                , "entityDTOObjMap"
+                , "entityResourceObjMap"
+                , "attributesObjMap"
+                , "searchAttributes"
+                , "CoreService"
+                , "BizService"
+                , "WebService"
+                , "importList"
+        };
+        int i, j;
+        j = 0;
+
+        try (
+                BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                if (line.contains("#")) {
+                    cabeceraSeccion = line.substring(1, line.length());
+                    System.out.println("Cabecera: " + cabeceraSeccion);
+                    j = 100;
+                    for (i = 0; i < cases.length; i++) {
+                        if (cabeceraSeccion.equals(cases[i]))
+                            j = i;
+                    }
+                    System.out.println("indice out: " + j);
+                    line = br.readLine();
+                    switch (j) {
+                        case 0: //
+                            System.out.println("entityDefMap");
+                            while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                entityDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
+                                line = br.readLine();
+                            }
+                            System.out.println(entityDefMap.keySet());
+                            break;
+                        case 1: //
+                            System.out.println("entityPojoDefMap");
+                            while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                entityPojoDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
+                                line = br.readLine();
+                            }
+                            System.out.println(entityPojoDefMap.keySet());
+                            break;
+                        case 2:
+                            System.out.println("coreServiceDefMap");
+                            while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                coreServiceDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
+                                line = br.readLine();
+                            }
+                            System.out.println(coreServiceDefMap.keySet());
+                            break;
+                        case 3: //
+                            while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                resultListDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
+                                line = br.readLine();
+                            }
+                            System.out.println(resultListDefMap.keySet());
+                            break;
+                        case 4:
+                            System.out.println("reqListDefMap");
+                            while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                reqListDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
+                                line = br.readLine();
+                            }
+                            System.out.println(reqListDefMap.keySet());
+                            break;
+                        case 5:
+                            System.out.println("#respListDefMap");
+                            while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                respListDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
+                                line = br.readLine();
+                            }
+                            System.out.println(respListDefMap.keySet());
+                            System.out.println(respListDefMap.values());
+                            System.out.println(respListDefMap);
+                            //String mStringArray[] = respListDefMap;//{ "String1", "String2" };
+                            //JSONArray mJSONArray = new JSONArray(Arrays.asList(mStringArray));
+                            //System.out.println(mJSONArray);
+                            break;
+                        case 6:
+                            System.out.println("#entityServiceDefMap");
+                            while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                entityServiceDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
+                                line = br.readLine();
+                            }
+                            System.out.println(respListDefMap.keySet());
+                            break;
+                        case 7:
+                            System.out.println("entityDTODefMap");
+                            while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                entityDTODefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
+                                line = br.readLine();
+                            }
+                            System.out.println(entityDTODefMap.keySet());
+                            break;
+                        case 8:
+                            System.out.println("entityResourceDefMap");
+                            while (line.contains(":") && !(line.contains("#"))) {//while (line.contains(",")) {
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                entityResourceDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
+                                line = br.readLine();
+                            }
+                            System.out.println(entityResourceDefMap.keySet());
+                            break;
+                        case 9:
+                            this.readAttributes(br, cabeceraSeccion, line, fieldAttributes);
+                            System.out.println(attributesDefMap.keySet());
+                            System.out.println(attributesDefMap.values());
+                            break;
+                        case 10:
+                            readAttributes(br, cabeceraSeccion, line, searchAttributes);
+                            System.out.println(attributesDefMap.keySet());
+                            System.out.println(attributesDefMap.values());
+                            break;
+                        case 11:
+                            System.out.println("dataFileCore");
+                            while (line.contains(":") && !(line.contains("#"))) {
+                                System.out.println("Valor de: " + cabeceraSeccion);
+                                dataFileCore.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
+                                line = br.readLine();
+                                System.out.println("siguiente ftl de: " + line);
+                            }
+                            System.out.println(dataFileCore.keySet());
+                            System.out.println(dataFileCore.get("entityFtlFileName"));
+                            break;
+                        case 12: //
+                            System.out.println("Biz");
+                            while (line.contains(":") && !(line.contains("#"))) { //line.contains("entity") &&
+                                System.out.println("ftl de: " + cabeceraSeccion + " " + line);
+                                dataFileBizService.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
+                                line = br.readLine();
+                            }
+                            System.out.println(dataFileBizService.keySet());
+                            System.out.println(dataFileBizService.values());
+                            break;
+                        case 13: //
+                            System.out.println("WebServer");
+                            while (line.contains(":") && !(line.contains("#"))) {//line.contains("entity") &&
+                                System.out.println("Valor de: " + cabeceraSeccion);
+                                dataFileWebService.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
+                                line = br.readLine();
+                            }
+                            System.out.println(dataFileWebService.keySet());
+                            System.out.println(dataFileWebService.values());
+                            break;
+                        case 14: //
+                            System.out.println("importList");
+                            while ((line.length() > 0) || !(line.contains("#"))) {//line.contains("entity") &&
+                                if (line.length() == 0)
+                                    break;
+                                System.out.println("Valor de: " + cabeceraSeccion);
+                                //fieldAttributes.add(new FtlAttribute(tipo, dato, valor));
+                                importArray.add(new ImportArray(line));
+                                //dataImportList.put(line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
+                                line = br.readLine();
+                                if (line.length() == 0)
+                                    break;
+                            }
+                            System.out.println(importArray);
+                            //System.out.println(JSON.Stringfy (importArray));
+
+                            //System.out.println(dataFileWebService.values());
+                            break;
+                        default:
+                            System.out.println("DEFAULT ");
+                    }
+                }
+                //System.out.println("Fin de case");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    public void loadJsonFile(String file) {
+        try {
+            String dato = "";
+            String tipo = "";
+            String valor = "";
+            String itemActual = "";
+
+
+            JsonFactory factory = new JsonFactory();
+
+            // Create JsonParser
+            File archivoJson = new File(file);
+
+            JsonParser parser = factory.createParser(archivoJson);
+            //20202-06-02 ggm: Para leer elarchivo se dividia n secciones para los Arrays y para los objetos
+            //1. Lectura de imports
+            JsonToken token = parser.nextToken(); // Read first object i.e. {
+            System.out.println("Primer Caracter : " + parser.getText());
+
+            token = parser.nextToken();
+            System.out.println("segundo Caracter : " + parser.getText());
+            token = parser.nextToken();
+            if (token == JsonToken.FIELD_NAME && "importList".equals(parser.getCurrentName())) {
+
+                System.out.println("Los imports son - ");
+                token = parser.nextToken(); // // Read left bracket i.e. [
+                // Loop to print array elements until right bracket i.e ]
+                while (token != JsonToken.END_ARRAY) {
+                    token = parser.nextToken();
+
+                    if (token == JsonToken.VALUE_STRING) {
+                        System.out.println(parser.getText());
+                        importArray.add(new ImportArray(parser.getText()));
+
+                    }
+                }
+                System.out.println("importArray --" + importArray);
+            }
+
+            token = parser.nextToken();
+            token = parser.nextToken();
+            token = parser.nextToken();
+            //token = parser.nextToken();
+            System.out.println("x Caracter  " + parser.getText());
+            //token = parser.nextToken();
+            //System.out.println("y Caracter  " + parser.getText());
+
+            if (token == JsonToken.FIELD_NAME && "respListObjMap".equals(parser.getCurrentName())) {
+
+                System.out.println("Objeto respListObjMap  - ");
+                token = parser.nextToken(); // // Read left bracket i.e. [
+                // Loop to print array elements until right bracket i.e ]
+                while (token != JsonToken.END_OBJECT) {
+                    token = parser.nextToken();
+
+                    if (token == JsonToken.VALUE_STRING) {
+                        System.out.println("Valores " + parser.getCurrentName() + " " + parser.getText());
+                        respListDefMap.put(parser.getCurrentName(), parser.getText());
+                    }
+                }
+                System.out.println("respListDefMap --X" + respListDefMap);
+            }
+
+            token = parser.nextToken();
+            token = parser.nextToken();
+            token = parser.nextToken();
+
+            //token = parser.nextToken();
+            System.out.println("Antes de seccion de search  " + parser.getText());
+            if (token == JsonToken.FIELD_NAME && "searchAttributes".equals(parser.getCurrentName())) {
+
+                System.out.println("Objeto searchAttributes  - ");
+                token = parser.nextToken(); // // Read left bracket i.e. [
+                // Loop to print array elements until right bracket i.e ]
+                while (token != JsonToken.END_ARRAY) {
+                    //  token = parser.nextToken();
+                    //if (token != JsonToken.END_ARRAY)
+                    //	  break;
+
+
+                    if (token == JsonToken.VALUE_STRING && parser.getCurrentName() != "]") {
+                        //System.out.println( "Valores Att " +parser.getCurrentName()+" "+parser.getText());
+                        itemActual = parser.getCurrentName();
+                        if (itemActual == "nombre")
+                            dato = parser.getText();
+                            //System.out.println("dato...".dato);
+                        else if (itemActual == "tipo")
+                            tipo = parser.getText();
+                        else if (itemActual == "valor")
+                            valor = parser.getText();
+                        if ((dato != "" && tipo != "" && valor != "") && (dato != null && tipo != null && valor != null)) {
+                            fieldAttributes.add(new FtlAttribute(dato, tipo, valor));
+                            dato = "";
+                            tipo = "";
+                            valor = "";
+                            //System.out.println("fieldAttributes -- "+fieldAttributes);
+                        }
+                        if (parser.nextToken().equals(']')) {
+                            break;
+                        }
+                    }
+                    //System.out.println("parser.nextToken()..........."+parser.nextToken()); // parser.getCurrentName() != "]"
+                    token = parser.nextToken();
+                    if (parser.currentToken() == JsonToken.END_ARRAY) {
+                        break;
+                    }
+                }
+                System.out.println("searchAttributes final -- " + fieldAttributes);
+            }
+
+            token = parser.nextToken();
+            token = parser.nextToken();
+            token = parser.nextToken();
+
+            //token = parser.nextToken();
+            System.out.println("Antes de seccion de attributes  " + parser.getText());
+            if (token == JsonToken.FIELD_NAME && "attributesObjMap".equals(parser.getCurrentName())) {
+
+                System.out.println("Objeto attributesObjMap  - ");
+                token = parser.nextToken(); // // Read left bracket i.e. [
+                // Loop to print array elements until right bracket i.e ]
+                while (token != JsonToken.END_ARRAY) {
+                    //  token = parser.nextToken();
+                    //if (token != JsonToken.END_ARRAY)
+                    //	  break;
+
+
+                    if (token == JsonToken.VALUE_STRING && parser.getCurrentName() != "]") {
+                        //System.out.println( "Valores Att " +parser.getCurrentName()+" "+parser.getText());
+                        itemActual = parser.getCurrentName();
+                        if (itemActual == "nombre")
+                            dato = parser.getText();
+                            //System.out.println("dato...".dato);
+                        else if (itemActual == "tipo")
+                            tipo = parser.getText();
+                        else if (itemActual == "valor")
+                            valor = parser.getText();
+                        if ((dato != "" && tipo != "" && valor != "") && (dato != null && tipo != null && valor != null)) {
+                            fieldAttributes.add(new FtlAttribute(dato, tipo, valor));
+                            dato = "";
+                            tipo = "";
+                            valor = "";
+                            //System.out.println("fieldAttributes -- "+fieldAttributes);
+                        }
+                        if (parser.nextToken().equals(']')) {
+                            break;
+                        }
+                    }
+                    //System.out.println("parser.nextToken()..........."+parser.nextToken()); // parser.getCurrentName() != "]"
+                    token = parser.nextToken();
+                    if (parser.currentToken() == JsonToken.END_ARRAY) {
+                        break;
+                    }
+                }
+                System.out.println("fieldAttributes final -- " + fieldAttributes);
+            }
+
+            parser.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
     protected void readAttributes(BufferedReader br, String cabeceraSeccion, String line, List<FtlAttribute> ftlAttributes) throws IOException {
         System.out.println("attributesObjMap: " + line);

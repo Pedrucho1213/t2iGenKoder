@@ -11,6 +11,7 @@ import java.io.IOException;
 public class DefEntityReader extends GenOpcgerx0 {
 
 
+
 /*
     public void inputData(String file) {
 
@@ -208,6 +209,7 @@ public class DefEntityReader extends GenOpcgerx0 {
         }
     }
 */
+
 
 
 }
