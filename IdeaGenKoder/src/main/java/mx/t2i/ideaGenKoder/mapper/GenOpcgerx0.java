@@ -112,6 +112,33 @@ public class GenOpcgerx0 {
     }
 
     public void inputData(String file) {
+        entityDefMap = new HashMap<>();
+        entityPojoDefMap = new HashMap<>();
+        coreServiceDefMap = new HashMap<>();
+        resultListDefMap = new HashMap<>();
+        reqListDefMap = new HashMap<>();
+        respListDefMap = new HashMap<>();
+        entityServiceDefMap = new HashMap<>();
+        entityDTODefMap = new HashMap<>();
+        entityResourceDefMap = new HashMap<>();
+        attributesDefMap = new HashMap<>();
+        dataFileCore = new HashMap<>();
+        dataFileBizService = new HashMap<>();
+        dataFileWebService = new HashMap<>();
+
+        entityObjMap = new HashMap<>();
+        entityPojoObjMap = new HashMap<>();
+        coreServiceObjMap = new HashMap<>();
+        resultListObjMap = new HashMap<>();
+        reqListObjMap = new HashMap<>();
+        respListObjMap = new HashMap<>();
+        entityServiceObjMap = new HashMap<>();
+        entityDTOObjMap = new HashMap<>();
+        entityResourceObjMap = new HashMap<>();
+        attributesObjMap = new HashMap<>();
+        dataSourceCore = new HashMap<>();
+        dataSourceBizService = new HashMap<>();
+        dataSourceWebService = new HashMap<>();
 
         if (file.contains("json") || file.contains("JSON")) {
             try {
@@ -120,33 +147,7 @@ public class GenOpcgerx0 {
                 String valor = "";
                 String itemActual = "";
 
-                entityDefMap = new HashMap<>();
-                entityPojoDefMap = new HashMap<>();
-                coreServiceDefMap = new HashMap<>();
-                resultListDefMap = new HashMap<>();
-                reqListDefMap = new HashMap<>();
-                respListDefMap = new HashMap<>();
-                entityServiceDefMap = new HashMap<>();
-                entityDTODefMap = new HashMap<>();
-                entityResourceDefMap = new HashMap<>();
-                attributesDefMap = new HashMap<>();
-                dataFileCore = new HashMap<>();
-                dataFileBizService = new HashMap<>();
-                dataFileWebService = new HashMap<>();
 
-                entityObjMap = new HashMap<>();
-                entityPojoObjMap = new HashMap<>();
-                coreServiceObjMap = new HashMap<>();
-                resultListObjMap = new HashMap<>();
-                reqListObjMap = new HashMap<>();
-                respListObjMap = new HashMap<>();
-                entityServiceObjMap = new HashMap<>();
-                entityDTOObjMap = new HashMap<>();
-                entityResourceObjMap = new HashMap<>();
-                attributesObjMap = new HashMap<>();
-                dataSourceCore = new HashMap<>();
-                dataSourceBizService = new HashMap<>();
-                dataSourceWebService = new HashMap<>();
                 JsonFactory factory = new JsonFactory();
 
                 // Create JsonParser
