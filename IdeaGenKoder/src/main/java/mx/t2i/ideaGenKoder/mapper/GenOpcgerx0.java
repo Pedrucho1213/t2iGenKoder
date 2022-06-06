@@ -389,14 +389,20 @@ public class GenOpcgerx0 {
                                 break;
                             case 5:
                                 System.out.println("#respListDefMap");
-                                while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                    System.out.println("Valor de: " + cabeceraSeccion + " " + line);
-                                    respListDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
-                                    line = br.readLine();
+                                try {
+                                    while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
+                                        System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                        respListDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
+
+                                        line = br.readLine();
+                                    }
+                                    System.out.println(respListDefMap.keySet());
+                                    System.out.println(respListDefMap.values());
+                                    System.out.println(respListDefMap);
+                                } catch (IOError e) {
+                                    System.out.println("error : " + e.toString());
                                 }
-                                System.out.println(respListDefMap.keySet());
-                                System.out.println(respListDefMap.values());
-                                System.out.println(respListDefMap);
+
                                 //String mStringArray[] = respListDefMap;//{ "String1", "String2" };
                                 //JSONArray mJSONArray = new JSONArray(Arrays.asList(mStringArray));
                                 //System.out.println(mJSONArray);
