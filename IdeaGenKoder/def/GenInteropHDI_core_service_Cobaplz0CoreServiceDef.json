@@ -1,0 +1,38 @@
+[
+   {
+      "importList":[
+         "import org.json.simple.JSONArray",
+         "import org.json.simple.JSONObject",
+         "import org.json.simple.parser.JSONParser"
+      ]
+   },
+   {
+     "respListObjMap":{
+         "respListFtlFileName":"src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service/CoreService.ftl.java",
+         "respListOutFileName":"src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service/Cobaplz0CoreService.java",
+         "FTL_package":"mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service",
+         "FTL_Model":"Cobaplz0CoreService",
+         "FTL_extends":"mx.t2i.tekhne.core.model.BaseInterfaceModel",
+         "FTL_CORE_SYSTEM":"TIIGCAYE",
+         "FTL_CORE_PROGRAM":"COBAPLZ0",
+         "FTL_coreModel":"Cobaplz0"
+        } 
+      },{
+        "searchAttributes":[
+            {"nombre": "numcliente", "tipo": "Integer","valor": "null"},
+            {"nombre": "finivig", "tipo": "Date", "valor": "null"}
+        ]
+        },
+       {
+        "attributesObjMap":[
+            {"nombre": "ramsubramo", "tipo": "String", "valor": "null"},
+            {"nombre": "numcliente", "tipo": "Integer","valor": "null"},
+            {"nombre": "finivig", "tipo": "Date", "valor": "null"},
+            {"nombre": "ftervig", "tipo": "Date", "valor": "null"},
+            {"nombre": "nesqfpago", "tipo": "Integer", "valor": "null"},
+            {"nombre": "nesqgexp", "tipo": "Integer", "valor": "null"},
+            {"nombre": "tpiva", "tipo": "Integer", "valor": "null"}
+        ]
+   },
+   
+]

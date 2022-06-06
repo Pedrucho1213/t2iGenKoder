@@ -1,0 +1,47 @@
+Plantilla: GenInteropHDI_core_model_Cobaplz0.def
+
+[
+   {
+      "importList":[
+ 
+      ]
+   },
+   {
+     "respListObjMap":{
+        "respListFtlFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/CoreModel.ftl.java",
+        "respListOutFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/Cobaplz0.java",
+        "FTL_package": "mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model",
+        "FTL_Model": "Cobaplz0",
+        "FTL_extends": "mx.t2i.tekhne.core.model.BaseInterfaceModel",
+        "FTL_CORE_PROGRAM": "COBAPLZ0"
+
+
+        } 
+      },
+       {
+      "searchAttributes":[
+        {"nombre": "ramsubramo", "tipo": "Integer", "valor": "null"},
+        {"nombre": "npoliza", "tipo": "Integer", "valor": "null"},
+        {"nombre": "naseg", "tipo": "String", "valor": "null"},
+        {"nombre": "ndepend", "tipo": "Integer", "valor": "null"},
+        {"nombre": "cvcob", "tipo": "Integer", "valor": "null"},
+        {"nombre": "tipoadic", "tipo": "Integer", "valor": "null"}
+
+      ]
+   },
+    {
+      "attributesObjMap":[
+        {"nombre": "ramsubramo", "tipo": "Integer", "valor": "null"},
+        {"nombre": "npoliza", "tipo": "Integer", "valor": "null"},
+        {"nombre": "naseg", "tipo": "String", "valor": "null"},
+        {"nombre": "ndepend", "tipo": "Integer", "valor": "null"},
+        {"nombre": "cvcob", "tipo": "Integer", "valor": "null"},
+        {"nombre": "tipoadic", "tipo": "Integer", "valor": "null"},
+        {"nombre": "sa", "tipo": "Integer", "valor": "null"},
+        {"nombre": "deducible", "tipo": "Double", "valor": "null"},
+        {"nombre": "coaseguro", "tipo": "Double", "valor": "null"}
+
+      ]
+    }
+]
+

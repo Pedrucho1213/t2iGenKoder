@@ -1,0 +1,76 @@
+{
+  "global": {
+    "menu": {
+      "entities": {
+        "opcger": "Opciones Gerenciales"
+      }
+    }
+  },
+  "breadcrumb": {
+    "opcger": "Opción Gerencial"
+  },
+  "appMain": {
+    "opcger": {
+      "home": {
+        "title": "Opciones gerenciales",
+        "createLabel": "Crear nuevo OpciónGerencial",
+        "createOrEditLabel": "Crear o editar OpciónGerencial",
+        "editLabel": "Editar OpciónGerencial",
+        "viewLabel": "Detalle de OpciónGerencial",
+        "deleteLabel": "Eliminar OpciónGerencial",
+        "notFound": "Ningún OpciónGerencial encontrado"
+      },
+      "created": "Un nuevo OpciónGerencial ha sido creado con el identificador {{ param }}",
+      "updated": "Un OpciónGerencial ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un OpciónGerencial ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar OpciónGerencial ({{ id }}) {{ desc }} ?"
+      },
+      "detail": {
+        "title": "Opción Gerencial",
+        "general-data": "General"
+      },
+      "id": "ID",
+      "ramsubramo": "ramo-subramo",
+      "moneda": "moneda",
+      "numnorma": "numnorma",
+      "finivig": "f.inicio.vig",
+      "descnorm": "Descripción de la Norma",
+      "nombrel": "Nombre del Ramo",
+      "moneda_i": "Moneda",
+      "valor1": "Valor1", "descval1": "Desc. valor1",
+      "valor2": "Valor2", "descval2": "Desc. valor2",
+      "valor3": "Valor3", "descval3": "Desc. valor3",
+      "valor4": "Valor4", "descval4": "Desc. valor4",
+      "valor5": "Valor5", "descval5": "Desc. valor5",
+      "valor6": "Valor6", "descval6": "Desc. valor6",
+      "valor7": "Valor7", "descval7": "Desc. valor7",
+      "valor8": "Valor8", "descval8": "Desc. valor8",
+      "valor9": "Valor9", "descval9": "Desc. valor9",
+      "valor10": "Valor10", "descval10": "Desc. valor10",
+      "valor11": "Valor11", "descval11": "Desc. valor11",
+      "valor12": "Valor12", "descval12": "Desc. valor12",
+      "help": {
+        "ramsubramo": "Ramo/Subramo",
+        "moneda": "Moneda",
+        "numnorma": "NumNorma",
+        "finivig": "F.Inicio.Vig",
+        "descnorm": "Descripción de la Norma",
+        "nombrel": "Nombre del Ramo",
+        "moneda_i": "Moneda",
+        "valor1": "Valor1", "descval1": "Desc. valor1",
+        "valor2": "Valor2", "descval2": "Desc. valor2",
+        "valor3": "Valor3", "descval3": "Desc. valor3",
+        "valor4": "Valor4", "descval4": "Desc. valor4",
+        "valor5": "Valor5", "descval5": "Desc. valor5",
+        "valor6": "Valor6", "descval6": "Desc. valor6",
+        "valor7": "Valor7", "descval7": "Desc. valor7",
+        "valor8": "Valor8", "descval8": "Desc. valor8",
+        "valor9": "Valor9", "descval9": "Desc. valor9",
+        "valor10": "Valor10", "descval10": "Desc. valor10",
+        "valor11": "Valor11", "descval11": "Desc. valor11",
+        "valor12": "Valor12", "descval12": "Desc. valor12"
+          }
+    }
+  }
+}

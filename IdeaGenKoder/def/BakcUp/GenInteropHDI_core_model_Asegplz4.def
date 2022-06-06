@@ -1,0 +1,55 @@
+Plantilla: GenInteropHDI_core_model_Asegplz4.def
+
+#importList
+
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/CoreModel.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/Asegplz4.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model
+FTL_Model: Asegplz4
+FTL_extends: mx.t2i.tekhne.core.model.BaseInterfaceModel
+FTL_CORE_PROGRAM: ASEGPLZ4
+
+#searchAttributes
+"ramsubramo", "Integer", "null"
+"npoliza", "Integer", "null"
+"naseg", "String", "null"
+"ndepend", "Integer", "null"
+
+
+#attributesObjMap
+"ramsubramo", "Integer", "null"
+"npoliza", "Integer", "null"
+"naseg", "String", "null"
+"ndepend", "Integer", "null"
+"finiseg", "Date", "null"
+"cvparent", "Integer", "null"
+"fantigcia", "Date", "null"
+"nomb", "String", "null"
+"appat", "String", "null"
+"apmat", "String", "null"
+"fnac", "Date", "null"
+"rfcsiglas", "String", "null"
+"rfcfecha", "String", "null"
+"rfchomon", "String", "null"
+"cvsexo", "Integer", "null"
+"calle", "String", "null"
+"colonia", "String", "null"
+"municipio", "String", "null"
+"poblacion", "String", "null"
+"edo", "Integer", "null"
+"codpost", "Integer", "null"
+"telefono1", "String", "null"
+"curp", "String", "null"
+"email", "String", "null"
+"tpubic", "Integer", "null"
+"acteco", "Integer", "null"
+"ocup", "String", "null"
+"paisnac", "Integer", "null"
+"nacionld", "Integer", "null"
+"perspolexp", "Integer", "null"
+"nombrycgo", "String", "null"
+"memberid", "Integer", "null"
+
+#

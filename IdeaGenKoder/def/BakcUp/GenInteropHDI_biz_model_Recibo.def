@@ -1,0 +1,34 @@
+Plantilla: GenInteropHDI_ws_model_Recibo.def
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/BizModel.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/Recibo.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model
+FTL_Model: Recibo
+FTL_instanceOf: Recibo
+FTL_extends: mx.t2i.tekhne.core.model.RootObject
+
+#importList
+import java.util.Date
+import java.util.List
+import javax.xml.bind.annotation.XmlElement
+import org.springframework.beans.factory.annotation.Autowired
+
+#attributesObjMap
+"folioRecibo", "Integer", "null"
+"fechaEmisionRbo", "Date", "null"
+"fPago", "Date", "null"
+"idTipoRecibo", "Integer", "null"
+"idStatusRecibo", "Integer", "null"
+"fStatusRecibo", "Date", "null"
+"descrStatusRecibo", "String", "null"
+"importe", "Double", "null"
+"recargoRecibo", "Double", "null"
+"gastoExpedicionRbo", "Double", "null"
+"inicioVigenciaRecibo", "Date", "null"
+"finVigenciaRecibo", "Date", "null"
+"primaTotalRecibo", "Double", "null"
+"comisionAgente", "Double", "null"
+"impuestoRecibo", "Double", "null"
+
+#

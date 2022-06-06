@@ -1,0 +1,47 @@
+Plantilla: GenInteropHDI_ws_model_Contratante.def
+
+[
+   {
+      "importList":[
+        "import java.util.Date",
+        "import java.util.List",
+        "import javax.xml.bind.annotation.XmlElement",
+        "import org.springframework.beans.factory.annotation.Autowired"
+      ]
+   },
+   {
+     "respListObjMap":{
+        "respListFtlFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/BizModel.ftl.java",
+        "respListOutFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/Contratante.java",
+        "FTL_package": "mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model",
+        "FTL_Model": "Contratante",
+        "FTL_instanceOf": "Contratante",
+        "FTL_extends": "mx.t2i.tekhne.core.model.RootObject"
+
+
+        } 
+      },
+       {
+      "searchAttributes":[
+  
+      ]
+   },
+    {
+      "attributesObjMap":[
+        {"nombre": "nombreContratante", "tipo": "String", "valor": "null"},
+        {"nombre": "tipoPersona", "tipo": "String", "valor": "null"},
+        {"nombre": "rfcContratante", "tipo": "String", "valor": "null"},
+        {"nombre": "eMail", "tipo": "String", "valor": "null"},
+        {"nombre": "calle", "tipo": "String", "valor": "null"},
+        {"nombre": "numExt", "tipo": "String", "valor": "null"},
+        {"nombre": "numInt", "tipo": "String", "valor": "null"},
+        {"nombre": "colonia", "tipo": "String", "valor": "null"},
+        {"nombre": "poblacion", "tipo": "String", "valor": "null"},
+        {"nombre": "codigoPostal", "tipo": "Integer", "valor": "null"},
+        {"nombre": "cveEstado", "tipo": "Integer", "valor": "null"},
+        {"nombre": "estado", "tipo": "String", "valor": "null"},
+        {"nombre": "referencia", "tipo": "String", "valor": "null"}
+
+      ]
+    }
+]

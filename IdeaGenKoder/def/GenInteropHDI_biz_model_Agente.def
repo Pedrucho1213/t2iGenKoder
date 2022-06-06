@@ -1,0 +1,22 @@
+Plantilla: GenInteropHDI_ws_model_Agente.def
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/BizModel.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/Agente.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model
+FTL_Model: Agente
+FTL_instanceOf: Agente
+FTL_extends: mx.t2i.tekhne.core.model.RootObject
+
+#importList
+import java.util.Date
+import java.util.List
+import javax.xml.bind.annotation.XmlElement
+import org.springframework.beans.factory.annotation.Autowired
+
+#attributesObjMap
+"idAgente", "Integer", "null"
+"nombreAgente", "String", "null"
+"porcPartc", "Double", "null"
+
+#

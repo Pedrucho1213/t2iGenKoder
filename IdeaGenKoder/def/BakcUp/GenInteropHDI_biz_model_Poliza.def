@@ -1,0 +1,46 @@
+Plantilla: GenInteropHDI_ws_model_Poliza.def
+
+#importList
+import java.util.Date
+import java.util.List
+import javax.xml.bind.annotation.XmlElement
+import org.springframework.beans.factory.annotation.Autowired
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/BizModel.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/Poliza.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model
+FTL_Model: Poliza
+FTL_instanceOf: Poliza
+FTL_extends: mx.t2i.tekhne.core.model.RootObject
+
+#attributesObjMap
+"ramsubramo", "String", "null"
+"numcliente", "Integer", "null"
+"finivig", "Date", "null"
+"ftervig", "Date", "null"
+"nesqfpago", "Integer", "null"
+"nesqgexp", "Integer", "null"
+"tpiva", "Integer", "null"
+"tpdocum", "Integer", "null"
+"topecoas", "Double", "null"
+"tpconcod", "Integer", "null"
+"idconcob", "String", "null"
+"tpcomis", "Integer", "null"
+"nagente1", "Integer", "null"
+"porcpart1", "Double", "null"
+"nagente2", "Integer", "null"
+"porcpart2", "Double", "null"
+"nagente3", "Integer", "null"
+"porcpart3", "Double", "null"
+"porcredag", "Double", "null"
+"porcredsu", "Double", "null"
+"ncotiza", "Integer", "null"
+"npolorg", "Integer", "null"
+"npolcoas", "String", "null"
+"porcdesc", "Double", "null"
+"stpoliza", "Integer", "null"
+"asegurados", "List<Asegurado>", "null"
+
+
+#

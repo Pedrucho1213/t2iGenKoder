@@ -1,0 +1,81 @@
+// ################################################################################################
+//
+// Script de configuracion de Documentacion de codigo fuente para Java Doc
+//
+// By: Erick I. Jimenez (erickjx@yahoo.com.mx)
+//
+// ################################################################################################
+
+// Opcion para generar los Java Docs
+// gradle javadoc
+// gradle javaDoc ??
+
+//task myJavadocs(type: Javadoc) {
+task javadoc(overwrite: true, dependsOn: compileJava, type: Javadoc) {
+
+    setDescription('Generates Javadoc API documentation with UMLGraph diagrams')
+    setGroup(JavaBasePlugin.DOCUMENTATION_GROUP)
+
+    source = sourceSets.main.allJava
+    classpath = configurations.compile
+
+    //options.windowTitle = 'API Reference'
+    //setWindowTitle('API Reference')
+    //options.encoding = 'UTF-8'
+    //options.locale = 'en_US'
+
+    doLast {
+        println "Building Javadocs with UML Graph ..."
+
+        def javaFilePath = file('src/main/java')
+        if (javaFilePath.exists()) {
+            //ant.javadoc(classpath: (configurations.runtime + configurations.provided).asPath,
+            ant.javadoc(classpath: (configurations.runtime).asPath,
+            sourcepath: file('src/main/java'),
+            packagenames: '*',
+            destdir: "${docsDir}/javadoc",
+            private: 'true',
+            overview: 'true',
+            encoding: 'UTF-8',
+            locale: 'en_US',
+            //stylesheetfile: 'gradle/config/javadoc/stylesheet.css',
+            docletpath: configurations.umljavadoc.asPath) {
+                doclet(name: 'org.umlgraph.doclet.UmlGraphDoc') {
+                    param(name: '-verbose')
+                    param(name: '-collapsible')
+                    param(name: '-inferrel')
+                    param(name: '-inferdep')
+                    param(name: '-attributes')
+                    param(name: '-enumerations')
+                    param(name: '-enumconstants')
+                    param(name: '-visibility')
+                    param(name: '-qualify')
+                    param(name: '-postfixpackage')
+                    param(name: '-inferdepvis', value: 'protected')
+                    //param(name: '-hide', value: 'java.*')
+                    param(name: '-hide', value: '(java.*|org.*|net.*)')
+                    param(name: '-collpackages', value: 'java.util.*')
+                    param(name: '-nodefontsize', value: '9')
+                    param(name: '-nodefontpackagesize', value: '7')
+                    param(name: '-outputencoding', value: 'utf8')
+                    param(name: '-link', value: 'http://docs.oracle.com/javase/8/docs/jdk/api/javadoc/doclet/')
+                    param(name: '-link', value: 'http://docs.oracle.com/javase/8/docs/api/')
+                }
+            }
+        }
+    }
+// HTML JavaDoc Fix ??
+//     element {
+//         font-family: Arial,Helvetica,sans-serif;
+//         padding: 4px;
+//         background: #007399;
+//         border-radius: 6px;
+//         color: white;
+//         font-weight: bold;
+//         font-size: 1.0em;
+//         width: 160px;
+//         display: block;
+//         text-align: center;
+//     }
+
+}

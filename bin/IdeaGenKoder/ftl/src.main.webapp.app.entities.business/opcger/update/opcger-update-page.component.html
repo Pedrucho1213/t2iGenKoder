@@ -1,0 +1,358 @@
+<div *ngIf="value" [formGroup]="editForm">
+  <app-alert-error></app-alert-error>
+  <app-alert></app-alert>
+<!--INI HEADER TAB 1 -->
+<mat-tab-group #tabs="matTabGroup" class="mat-tab-heigh-60" dynamicHeight>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span *ngIf="isFormSectionInvalid(0)" class="text-red">{{ '* &nbsp;' }}</span>
+      <span [ngClass]="{ 'text-red' : isFormSectionInvalid(0) }" appTranslate="appMain.opcger.detail.general-data">General Data</span>
+    </ng-template>
+    <ng-template matTabContent>
+      <div class="p-6 mat-accordion-section-panel-450" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="150">
+ <!--FIN HEADER TAB 1 -->
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+      <mat-form-field fxFlex="35%">
+        <mat-label><span appTranslate="global.field.id">Id</span></mat-label>
+        <input matInput autocomplete="off" type="text" formControlName="id" name="id" id="field_id" data-cy="id" [readonly]="true" />
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+      <mat-form-field fxFlex="35%">
+        <mat-label>
+          <span appTranslate="appMain.opcger.ramsubramo" matTooltip="{{ 'appMain.opcger.help.ramsubramo' | translate }}">
+            ramoSubramo</span>
+        </mat-label>
+<!--
+        <input
+          matInput
+          autocomplete="off"
+          formControlName="ramsubramo"
+          type="text"
+          name="ramsubramo"
+          id="field_ramsubramo"
+          [placeholder]="'appMain.opcger.help.ramsubramo' | translate"
+          [patterns]="ramsubramoMask.pattern"
+          [validation]="false"
+          [dropSpecialCharacters]="false"
+          [mask]="ramsubramoMask.mask"
+          data-cy="ramsubramo"
+        />
+-->
+        <mtx-select
+          appendTo="body"
+          autocomplete="off"
+          name="ramsubramo"
+          formControlName="ramsubramo"
+          [multiple]="false"
+          [items]="catramosSelect"
+          [searchable]="true"
+          bindLabel="nombrel"
+          bindValue="ramsubramo"
+          placeholder="{{ 'appMain.opcger.help.ramsubramo' | translate }}"
+          clearAllText="{{ 'controls.select.clear' | translate }}"
+          data-cy="ramsubramo"
+        >
+        </mtx-select>
+
+        <mat-error
+          align="end"
+          ngProjectAs="mat-error"
+          *ngIf="editForm.get('ramsubramo')!.invalid && (editForm.get('ramsubramo')!.dirty || editForm.get('ramsubramo')!.touched)"
+        >
+          <mat-error align="end" *ngIf="editForm.get('ramsubramo')?.errors?.required">
+            <span appTranslate="entity.validation.required">This field is required.</span>
+          </mat-error>
+          <mat-error align="end" *ngIf="editForm.get('ramsubramo')?.errors?.maxlength">
+            <span appTranslate="entity.validation.maxlength" [translateValues]="{ max: ramsubramoMask.size }">This field is too long.</span>
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="35%">
+        <mat-label>
+          <span appTranslate="appMain.opcger.moneda" matTooltip="{{ 'appMain.opcger.help.moneda' | translate }}">monedA</span>
+        </mat-label>
+        <input
+          matInput
+          autocomplete="off"
+          formControlName="moneda"
+          type="text"
+          name="moneda"
+          id="field_moneda"
+          [placeholder]="'appMain.opcger.help.moneda' | translate"
+          [patterns]="monedaMask.pattern"
+          [validation]="false"
+          [dropSpecialCharacters]="false"
+          [mask]="monedaMask.mask"
+          data-cy="moneda"
+        />
+
+        <mat-error
+          align="end"
+          ngProjectAs="mat-error"
+          *ngIf="editForm.get('moneda')!.invalid && (editForm.get('moneda')!.dirty || editForm.get('moneda')!.touched)"
+        >
+          <mat-error align="end" *ngIf="editForm.get('moneda')?.errors?.required">
+            <span appTranslate="entity.validation.required">This field is required.</span>
+          </mat-error>
+          <mat-error align="end" *ngIf="editForm.get('moneda')?.errors?.maxlength">
+            <span appTranslate="entity.validation.maxlength" [translateValues]="{ max: monedaMask.size }">This field is too long.</span>
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="30%">
+        <mat-label>
+          <span appTranslate="appMain.opcger.numnorma" matTooltip="{{ 'appMain.opcger.help.numnorma' | translate }}">numnorma</span></mat-label
+        >
+        <input
+          matInput
+          autocomplete="off"
+          formControlName="numnorma"
+          type="text"
+          name="numnorma"
+          id="field_numnorma"
+          [placeholder]="'appMain.opcger.help.numnorma' | translate"
+          [patterns]="numnormaMask.pattern"
+          [validation]="false"
+          [dropSpecialCharacters]="false"
+          [mask]="numnormaMask.mask"
+          data-cy="numnorma"
+        />
+
+        <mat-error
+          align="end"
+          ngProjectAs="mat-error"
+          *ngIf="editForm.get('numnorma')!.invalid && (editForm.get('numnorma')!.dirty || editForm.get('numnorma')!.touched)"
+        >
+          <mat-error align="end" *ngIf="editForm.get('numnorma')?.errors?.required">
+            <span appTranslate="entity.validation.required">This field is required.</span>
+          </mat-error>
+          <mat-error align="end" *ngIf="editForm.get('numnorma')?.errors?.maxlength">
+            <span appTranslate="entity.validation.maxlength" [translateValues]="{ max: numnormaMask.size }">This field is too long.</span>
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+      <mat-form-field fxFlex="30%">
+        <mat-label>
+          <span appTranslate="appMain.opcger.finivig" matTooltip="{{ 'appMain.opcger.help.finivig' | translate }}">finivig</span></mat-label
+        >
+        <input
+          matInput
+          autocomplete="off"
+          formControlName="finivig"
+          type="text"
+          name="finivig"
+          id="field_finivig"
+          [placeholder]="'appMain.opcger.help.finivig' | translate"
+          [matDatepicker]="finivig"
+          data-cy="finivig"
+        />
+        <mat-datepicker-toggle matSuffix [for]="finivig"></mat-datepicker-toggle>
+        <mat-datepicker #finivig></mat-datepicker>
+
+        <mat-error
+          align="end"
+          ngProjectAs="mat-error"
+          *ngIf="editForm.get('finivig')!.invalid && (editForm.get('finivig')!.dirty || editForm.get('finivig')!.touched)"
+        >
+          <mat-error align="end" *ngIf="editForm.get('finivig')?.errors?.required">
+            <span appTranslate="entity.validation.required">This field is required.</span>
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="70%">
+        <mat-label>
+          <span appTranslate="appMain.opcger.descnorm" matTooltip="{{ 'appMain.opcger.help.descnorm' | translate }}">descnorm</span></mat-label
+        >
+        <input
+          matInput
+          autocomplete="off"
+          formControlName="descnorm"
+          type="text"
+          name="descnorm"
+          id="field_descnorm"
+          [placeholder]="'appMain.opcger.help.descnorm' | translate"
+          [patterns]="descnormMask.pattern"
+          [validation]="false"
+          [dropSpecialCharacters]="false"
+          [mask]="descnormMask.mask"
+          data-cy="descnorm"
+        />
+
+        <mat-error
+          align="end"
+          ngProjectAs="mat-error"
+          *ngIf="editForm.get('descnorm')!.invalid && (editForm.get('descnorm')!.dirty || editForm.get('descnorm')!.touched)"
+        >
+          <mat-error align="end" *ngIf="editForm.get('descnorm')?.errors?.required">
+            <span appTranslate="entity.validation.required">This field is required.</span>
+          </mat-error>
+          <mat-error align="end" *ngIf="editForm.get('descnorm')?.errors?.maxlength">
+            <span appTranslate="entity.validation.maxlength" [translateValues]="{ max: descnormMask.size }">This field is too long.</span>
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+    </div>
+<!-- INI FOOTER TAB 1 -->
+</div><!-- class="p-6 mat-accordion-section-panel-450" -->
+</ng-template>
+</mat-tab>
+<!-- FIN FOOTER TAB 1 -->
+
+<!-- INI HEADER TAB 2 -->
+<mat-tab>
+    <ng-template mat-tab-label>
+      <span *ngIf="isFormSectionInvalid(1)" class="text-red">{{ '* &nbsp;' }}</span>
+      <span [ngClass]="{ 'text-red' : isFormSectionInvalid(1) }">Valores</span>
+    </ng-template>
+    <ng-template matTabContent>
+      <div class="p-6 mat-accordion-section-panel-450" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="150">
+<!-- FIN HEADER TAB 2 -->
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+          <mat-form-field fxFlex="30%">
+            <mat-label><span appTranslate="appMain.opcger.valor1">"valor1"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="valor1" name="valor1" id="field_valor1" data-cy="valor1" [readonly]="false" />
+          </mat-form-field>
+          <mat-form-field fxFlex="70%">
+            <mat-label><span appTranslate="appMain.opcger.descval1">"descval1"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="descval1" name="descval1" id="field_descval1" data-cy="descval1" [readonly]="false" />
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+          <mat-form-field fxFlex="30%">
+            <mat-label><span appTranslate="appMain.opcger.valor2">"valor2"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="valor2" name="valor2" id="field_valor2" data-cy="valor2" [readonly]="false" />
+          </mat-form-field>
+          <mat-form-field fxFlex="70%">
+            <mat-label><span appTranslate="appMain.opcger.descval2">"descval2"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="descval2" name="descval2" id="field_descval2" data-cy="descval2" [readonly]="false" />
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+          <mat-form-field fxFlex="30%">
+            <mat-label><span appTranslate="appMain.opcger.valor3">"valor3"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="valor3" name="valor3" id="field_valor3" data-cy="valor3" [readonly]="false" />
+          </mat-form-field>
+          <mat-form-field fxFlex="70%">
+            <mat-label><span appTranslate="appMain.opcger.descval3">"descval3"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="descval3" name="descval3" id="field_descval3" data-cy="descval3" [readonly]="false" />
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+          <mat-form-field fxFlex="30%">
+            <mat-label><span appTranslate="appMain.opcger.valor4">"valor4"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="valor4" name="valor4" id="field_valor4" data-cy="valor4" [readonly]="false" />
+          </mat-form-field>
+          <mat-form-field fxFlex="70%">
+            <mat-label><span appTranslate="appMain.opcger.descval4">"descval4"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="descval4" name="descval4" id="field_descval4" data-cy="descval4" [readonly]="false" />
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+          <mat-form-field fxFlex="30%">
+            <mat-label><span appTranslate="appMain.opcger.valor5">"valor5"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="valor5" name="valor5" id="field_valor5" data-cy="valor5" [readonly]="false" />
+          </mat-form-field>
+          <mat-form-field fxFlex="70%">
+            <mat-label><span appTranslate="appMain.opcger.descval5">"descval5"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="descval5" name="descval5" id="field_descval5" data-cy="descval5" [readonly]="false" />
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+          <mat-form-field fxFlex="30%">
+            <mat-label><span appTranslate="appMain.opcger.valor6">"valor6"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="valor6" name="valor6" id="field_valor6" data-cy="valor6" [readonly]="false" />
+          </mat-form-field>
+          <mat-form-field fxFlex="70%">
+            <mat-label><span appTranslate="appMain.opcger.descval6">"descval6"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="descval6" name="descval6" id="field_descval6" data-cy="descval6" [readonly]="false" />
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+          <mat-form-field fxFlex="30%">
+            <mat-label><span appTranslate="appMain.opcger.valor7">"valor7"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="valor7" name="valor7" id="field_valor7" data-cy="valor7" [readonly]="false" />
+          </mat-form-field>
+          <mat-form-field fxFlex="70%">
+            <mat-label><span appTranslate="appMain.opcger.descval7">"descval7"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="descval7" name="descval7" id="field_descval7" data-cy="descval7" [readonly]="false" />
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+          <mat-form-field fxFlex="30%">
+            <mat-label><span appTranslate="appMain.opcger.valor8">"valor8"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="valor8" name="valor8" id="field_valor8" data-cy="valor8" [readonly]="false" />
+          </mat-form-field>
+          <mat-form-field fxFlex="70%">
+            <mat-label><span appTranslate="appMain.opcger.descval8">"descval8"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="descval8" name="descval8" id="field_descval8" data-cy="descval8" [readonly]="false" />
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+          <mat-form-field fxFlex="30%">
+            <mat-label><span appTranslate="appMain.opcger.valor9">"valor9"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="valor9" name="valor9" id="field_valor9" data-cy="valor9" [readonly]="false" />
+          </mat-form-field>
+          <mat-form-field fxFlex="70%">
+            <mat-label><span appTranslate="appMain.opcger.descval9">"descval9"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="descval9" name="descval9" id="field_descval9" data-cy="descval9" [readonly]="false" />
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+          <mat-form-field fxFlex="30%">
+            <mat-label><span appTranslate="appMain.opcger.valor10">"valor10"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="valor10" name="valor10" id="field_valor10" data-cy="valor10" [readonly]="false" />
+          </mat-form-field>
+          <mat-form-field fxFlex="70%">
+            <mat-label><span appTranslate="appMain.opcger.descval10">"descval10"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="descval10" name="descval10" id="field_descval10" data-cy="descval10" [readonly]="false" />
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+          <mat-form-field fxFlex="30%">
+            <mat-label><span appTranslate="appMain.opcger.valor11">"valor11"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="valor11" name="valor11" id="field_valor11" data-cy="valor11" [readonly]="false" />
+          </mat-form-field>
+          <mat-form-field fxFlex="70%">
+            <mat-label><span appTranslate="appMain.opcger.descval11">"descval11"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="descval11" name="descval11" id="field_descval11" data-cy="descval11" [readonly]="false" />
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+          <mat-form-field fxFlex="30%">
+            <mat-label><span appTranslate="appMain.opcger.valor12">"valor12"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="valor12" name="valor12" id="field_valor12" data-cy="valor12" [readonly]="false" />
+          </mat-form-field>
+          <mat-form-field fxFlex="70%">
+            <mat-label><span appTranslate="appMain.opcger.descval12">"descval12"</span></mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="descval12" name="descval12" id="field_descval12" data-cy="descval12" [readonly]="false" />
+          </mat-form-field>
+        </div>
+
+<!-- INI FOOTER TAB 2 -->
+</div>
+</ng-template>
+</mat-tab>
+<!-- FIN FOOTER TAB 2 -->
+
+</mat-tab-group>
+</div>

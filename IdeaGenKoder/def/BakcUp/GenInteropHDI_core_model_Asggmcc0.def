@@ -1,0 +1,27 @@
+Plantilla: GenInteropHDI_core_model_Asggmcc0.def
+
+#importList
+import java.util.List;
+import javax.xml.bind.annotation.XmlElement;
+import org.springframework.beans.factory.annotation.Autowired;
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/Core.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/Asggmcc0.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model
+FTL_Model: Asggmcc0
+FTL_instanceOf: Asggmcc0
+FTL_extends: mx.t2i.tekhne.core.model.BaseInterfaceModel
+
+#attributesObjMap
+"naseg", "String", "null"
+"ndepend", "Integer", "null"
+"nombre", "String", "null"
+"fnac", "Date", "null"
+"cvsexo_i", "String", "null"
+"cvparent_i", "String", "null"
+"antigseg", "Integer", "null"
+"edadreal", "Integer", "null"
+"edadcalc", "Integer", "null"
+
+#

@@ -1,0 +1,60 @@
+Plantilla: GenInteropHDI_ws_model_Poliza.def
+
+[
+   {
+      "importList":[
+        "import java.util.Date",
+        "import java.util.List",
+        "import javax.xml.bind.annotation.XmlElement",
+        "import org.springframework.beans.factory.annotation.Autowired"
+      ]
+   },
+   {
+     "respListObjMap":{
+        "respListFtlFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/BizModel.ftl.java",
+        "respListOutFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/Poliza.java",
+        "FTL_package": "mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model",
+        "FTL_Model": "Poliza",
+        "FTL_instanceOf": "Poliza",
+        "FTL_extends": "mx.t2i.tekhne.core.model.RootObject"
+
+
+        } 
+      },
+       {
+      "searchAttributes":[
+  
+      ]
+   },
+    {
+      "attributesObjMap":[
+        {"nombre": "ramsubramo", "tipo": "String", "valor": "null"},
+        {"nombre": "numcliente", "tipo": "Integer", "valor": "null"},
+        {"nombre": "finivig", "tipo": "Date", "valor": "null"},
+        {"nombre": "ftervig", "tipo": "Date", "valor": "null"},
+        {"nombre": "nesqfpago", "tipo": "Integer", "valor": "null"},
+        {"nombre": "nesqgexp", "tipo": "Integer", "valor": "null"},
+        {"nombre": "tpiva", "tipo": "Integer", "valor": "null"},
+        {"nombre": "tpdocum", "tipo": "Integer", "valor": "null"},
+        {"nombre": "topecoas", "tipo": "Double", "valor": "null"},
+        {"nombre": "tpconcod", "tipo": "Integer", "valor": "null"},
+        {"nombre": "idconcob", "tipo": "String", "valor": "null"},
+        {"nombre": "tpcomis", "tipo": "Integer", "valor": "null"},
+        {"nombre": "nagente1", "tipo": "Integer", "valor": "null"},
+        {"nombre": "porcpart1", "tipo": "Double", "valor": "null"},
+        {"nombre": "nagente2", "tipo": "Integer", "valor": "null"},
+        {"nombre": "porcpart2", "tipo": "Double", "valor": "null"},
+        {"nombre": "nagente3", "tipo": "Integer", "valor": "null"},
+        {"nombre": "porcpart3", "tipo": "Double", "valor": "null"},
+        {"nombre": "porcredag", "tipo": "Double", "valor": "null"},
+        {"nombre": "porcredsu", "tipo": "Double", "valor": "null"},
+        {"nombre": "ncotiza", "tipo": "Integer", "valor": "null"},
+        {"nombre": "npolorg", "tipo": "Integer", "valor": "null"},
+        {"nombre": "npolcoas", "tipo": "String", "valor": "null"},
+        {"nombre": "porcdesc", "tipo": "Double", "valor": "null"},
+        {"nombre": "stpoliza", "tipo": "Integer", "valor": "null"},
+        {"nombre": "asegurados", "tipo": "List<Asegurado>", "valor": "null"}
+
+      ]
+    }
+]

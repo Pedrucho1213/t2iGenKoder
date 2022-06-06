@@ -1,0 +1,32 @@
+Plantilla: GenInteropHDI_ws_model_Contratante.def
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/BizModel.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/Contratante.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model
+FTL_Model: Contratante
+FTL_instanceOf: Contratante
+FTL_extends: mx.t2i.tekhne.core.model.RootObject
+
+#importList
+import java.util.Date
+import java.util.List
+import javax.xml.bind.annotation.XmlElement
+import org.springframework.beans.factory.annotation.Autowired
+
+#attributesObjMap
+"nombreContratante", "String", "null"
+"tipoPersona", "String", "null"
+"rfcContratante", "String", "null"
+"eMail", "String", "null"
+"calle", "String", "null"
+"numExt", "String", "null"
+"numInt", "String", "null"
+"colonia", "String", "null"
+"poblacion", "String", "null"
+"codigoPostal", "Integer", "null"
+"cveEstado", "Integer", "null"
+"estado", "String", "null"
+"referencia", "String", "null"
+
+#

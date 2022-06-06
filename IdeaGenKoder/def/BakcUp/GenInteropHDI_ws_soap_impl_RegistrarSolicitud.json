@@ -1,0 +1,29 @@
+Plantilla: GenInteropHDI_ws_soap_RegistrarSolicitud.def
+
+[
+   {
+      "importList":[
+ 
+      ]
+   },
+   {
+     "respListObjMap":{
+        "respListFtlFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.soap.impl/RegistrarSolicitudWsImpl.ftl.java",
+        "respListOutFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.soap.impl/RegistrarSolicitudWsImpl.java",
+        "FTL_package": "mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.soap.impl",
+        "FTL_Model": "RegistrarSolicitud",
+        "FTL_model": "registrarSolicitud"
+
+        } 
+      },
+       {
+      "searchAttributes":[
+  
+      ]
+   },
+    {
+      "fieldAttributes":[
+
+      ]
+    }
+]

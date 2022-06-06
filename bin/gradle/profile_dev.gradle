@@ -1,0 +1,94 @@
+dependencies {
+    developmentOnly "org.springframework.boot:spring-boot-devtools:${spring_boot_version}"
+    //implementation "com.h2database:h2"
+}
+
+def profileList = ['loc','dev','qa','prod']
+// Profile default
+def profile_default = "dev"
+
+def profiles = "${profile_default}"
+if (project.hasProperty("no-liquibase")) {
+    profiles += ",no-liquibase"
+}
+if (project.hasProperty("tls")) {
+    profiles += ",tls"
+}
+
+springBoot {
+    buildInfo {
+        properties {
+            time = null
+        }
+    }
+}
+
+bootRun {
+    args = []
+}
+
+task webpack(type: NpmTask) {
+    inputs.files("package-lock.json")
+    inputs.files("build.gradle")
+    inputs.dir("src/main/webapp/")
+
+    def webpackDevFiles = fileTree("webpack//")
+    profileList.each { prof ->
+        if (prof == profile_default) return
+        webpackDevFiles.exclude("webpack.${prof}.js")
+    }
+    inputs.files(webpackDevFiles)
+
+    outputs.dir("build/resources/main/static/")
+
+    // dependsOn npmInstall
+    dependsOn npm_run_inst // Fix para ejecutar install de package
+    args = ["run", "webpack:build"]
+    environment = [APP_VERSION: project.version]
+}
+
+processResources {
+    inputs.property('version', version)
+    inputs.property('springProfiles', profiles)
+    filesMatching("**/application.yml") {
+        filter {
+            it.replace("#project.version#", version)
+        }
+        filter {
+            it.replace("#spring.profiles.active#", profiles)
+        }
+    }
+
+    profileList.each { prof ->
+        // if (prof != profile_default) return
+        def profProp = new Properties()
+
+        file("gradle/profile_${prof}.properties").withInputStream{
+            profProp.load(it);
+        }
+        profProp.version = version
+        profProp.profile_active = prof
+        // println "Prop ${prof}: ${profProp}"
+
+        filesMatching("**/application-${prof}.yml") {
+            filter(org.apache.tools.ant.filters.ReplaceTokens, tokens: profProp)
+        }
+
+        filesMatching("**/application-tls.yml") {
+            filter(org.apache.tools.ant.filters.ReplaceTokens, tokens: profProp)
+        }
+    }
+}
+
+def withFront = true
+
+if (findProperty("withFront")) {
+    withFront = findProperty("withFront")
+}
+
+println "Building with Front: ${withFront}"
+
+if (withFront == true) {
+   processResources.dependsOn webpack
+}
+bootJar.dependsOn processResources

@@ -1,0 +1,14 @@
+<div fxLayout="column" fxLayoutAlign="start stretch">
+  <div appContainer>
+    <div class="title-section">
+      <span appTranslate="{{ title }}">Title</span>
+    </div>
+  </div>
+
+  <app-alert-error></app-alert-error>
+  <app-alert></app-alert>
+
+  <div class="app-page-layout-content card pt-8" appContainer>
+    <app-opcger-list [hasEdit]="true" [hasView]="true" [hasNew]="true" [hasExport]="true" [hasDelete]="true"></app-opcger-list>
+  </div>
+</div>

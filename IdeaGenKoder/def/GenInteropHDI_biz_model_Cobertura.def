@@ -1,0 +1,21 @@
+Plantilla: GenInteropHDI_ws_model_Cobertura.def
+
+#importList
+import java.util.Date
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/BizModel.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/Cobertura.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model
+FTL_Model: Cobertura
+FTL_extends: /*mx.t2i.tekhne.core.model.Root*/Object
+
+
+#attributesObjMap
+"cvcob", "Integer", "null"
+"tipoadic", "Integer", "null"
+"sa", "Integer", "null"
+"deducible", "Double", "null"
+"coaseguro", "Double", "null"
+
+#

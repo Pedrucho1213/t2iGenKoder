@@ -1,0 +1,68 @@
+Plantilla: GenInteropHDI_ws_model_Asegurado.def
+
+[
+   {
+      "importList":[
+        "import java.util.ArrayList;",
+        "import java.util.Date",
+        "import java.util.List",
+        "import javax.xml.bind.annotation.XmlElement",
+        "import org.springframework.beans.factory.annotation.Autowired"
+
+      ]
+   },
+   {
+     "respListObjMap":{
+        "respListFtlFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/BizModel.ftl.java",
+        "respListOutFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/Asegurado.java",
+        "FTL_package": "mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model",
+        "FTL_Model": "Asegurado",
+        "FTL_instanceOf": "Asegurado",
+        "FTL_extends": "mx.t2i.tekhne.core.model.RootObject"
+
+
+        } 
+      },
+       {
+      "searchAttributes":[
+  
+      ]
+   },
+    {
+      "attributesObjMap":[
+        {"nombre": "ramsubramo", "tipo": "Integer", "valor": "null"},
+        {"nombre": "npoliza", "tipo": "Integer", "valor": "null"},
+        {"nombre": "ndepend", "tipo": "Integer", "valor": "null"},
+        {"nombre": "finiseg", "tipo": "Date", "valor": "null"},
+        {"nombre": "cvparent", "tipo": "Integer", "valor": "null"},
+        {"nombre": "fantigcia", "tipo": "Date", "valor": "null"},
+        {"nombre": "nomb", "tipo": "String", "valor": "null"},
+        {"nombre": "appat", "tipo": "String", "valor": "null"},
+        {"nombre": "apmat", "tipo": "String", "valor": "null"},
+        {"nombre": "fnac", "tipo": "Date", "valor": "null"},
+        {"nombre": "rfcsiglas", "tipo": "String", "valor": "null"},
+        {"nombre": "rfcfecha", "tipo": "String", "valor": "null"},
+        {"nombre": "rfchomon", "tipo": "String", "valor": "null"},
+        {"nombre": "cvsexo", "tipo": "Integer", "valor": "null"},
+        {"nombre": "calle", "tipo": "String", "valor": "null"},
+        {"nombre": "colonia", "tipo": "String", "valor": "null"},
+        {"nombre": "municipio", "tipo": "String", "valor": "null"},
+        {"nombre": "poblacion", "tipo": "String", "valor": "null"},
+        {"nombre": "edo", "tipo": "Integer", "valor": "null"},
+        {"nombre": "codpost", "tipo": "Integer", "valor": "null"},
+        {"nombre": "telefono", "tipo": "String", "valor": "null"},
+        {"nombre": "curp", "tipo": "String", "valor": "null"},
+        {"nombre": "email", "tipo": "String", "valor": "null"},
+        {"nombre": "tpubic", "tipo": "Integer", "valor": "null"},
+        {"nombre": "acteco", "tipo": "Integer", "valor": "null"},
+        {"nombre": "ocup", "tipo": "String", "valor": "null"},
+        {"nombre": "paisnac", "tipo": "Integer", "valor": "null"},
+        {"nombre": "nacionld", "tipo": "Integer", "valor": "null"},
+        {"nombre": "perspolexp", "tipo": "Integer", "valor": "null"},
+        {"nombre": "nombrycgo", "tipo": "String", "valor": "null"},
+        {"nombre": "memberid", "tipo": "Integer", "valor": "null"},
+        {"nombre": "coberturas", "tipo": "List<Cobertura>", "valor": "null"}
+
+      ]
+    }
+]

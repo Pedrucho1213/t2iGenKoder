@@ -1,0 +1,34 @@
+Plantilla: GenInteropHDI_core_model_Cobaplz0.def
+
+#importList
+
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/CoreModel.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/Cobaplz0.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model
+FTL_Model: Cobaplz0
+FTL_extends: mx.t2i.tekhne.core.model.BaseInterfaceModel
+FTL_CORE_PROGRAM: COBAPLZ0
+
+#searchAttributes
+"ramsubramo", "Integer", "null"
+"npoliza", "Integer", "null"
+"naseg", "String", "null"
+"ndepend", "Integer", "null"
+"cvcob", "Integer", "null"
+"tipoadic", "Integer", "null"
+
+
+#attributesObjMap
+"ramsubramo", "Integer", "null"
+"npoliza", "Integer", "null"
+"naseg", "String", "null"
+"ndepend", "Integer", "null"
+"cvcob", "Integer", "null"
+"tipoadic", "Integer", "null"
+"sa", "Integer", "null"
+"deducible", "Double", "null"
+"coaseguro", "Double", "null"
+
+#EOF

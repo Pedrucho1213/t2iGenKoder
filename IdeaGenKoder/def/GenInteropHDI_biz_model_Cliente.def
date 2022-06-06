@@ -1,0 +1,65 @@
+Plantilla: GenInteropHDI_ws_model_Cliente.def
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/BizModel.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/Cliente.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model
+FTL_Model: Cliente
+FTL_instanceOf: Cliente
+FTL_extends: /*mx.t2i.tekhne.core.model.Root*/Object
+
+#importList
+import java.util.Date
+import java.util.List
+import javax.xml.bind.annotation.XmlElement
+import org.springframework.beans.factory.annotation.Autowired
+
+#searchAttributes
+"numcliente", "Integer", "null"
+
+#attributesObjMap
+"numcliente", "Integer", "null"
+"cvperson", "Integer", "null"
+"rfcsiglas", "String", "null"
+"rfcfecha", "String", "null"
+"rfchomon", "String", "null"
+"curp", "String", "null"
+"nombre", "String", "null"
+"appat", "String", "null"
+"apmat", "String", "null"
+"nomcomp1", "String", "null"
+"edocivil", "Integer", "null"
+"cvsexo", "Integer", "null"
+"fnac", "Date", "null"
+"paisnac", "Integer", "null"
+"estatura", "Double", "null"
+"nacionld", "Integer", "null"
+"peso", "Double", "null"
+"tpidentif", "Integer", "null"
+"ndocident", "String", "null"
+"cvcompdom", "Integer", "null"
+"email", "String", "null"
+"ocup", "String", "null"
+"calle", "String", "null"
+"numext", "String", "null"
+"numint", "String", "null"
+"codpost", "Integer", "null"
+"colonia", "String", "null"
+"poblacion", "String", "null"
+"edo", "Integer", "null"
+"cvemunpo", "Integer", "null"
+"telefono", "String", "null"
+"usocfdi", "String", "null"
+"acteco", "Integer", "null"
+"perspolexp", "Integer", "null"
+"nombrycgo", "String", "null"
+"apodlegal", "String", "null"
+"tpregimn", "Integer", "null"
+"cvegiro", "Integer", "null"
+"cargopolit", "Integer", "null"
+"actividfui", "Integer", "null"
+"actfuitext", "String", "null"
+"actfteingr", "String", "null"
+
+
+#

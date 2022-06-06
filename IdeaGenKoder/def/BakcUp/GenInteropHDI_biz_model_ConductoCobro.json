@@ -1,0 +1,45 @@
+Plantilla: GenInteropHDI_ws_model_ConductoCobro.def
+
+[
+   {
+      "importList":[
+        "import java.util.Date",
+        "import java.util.List",
+        "import javax.xml.bind.annotation.XmlElement",
+        "import org.springframework.beans.factory.annotation.Autowired"
+
+      ]
+   },
+   {
+     "respListObjMap":{
+        "respListFtlFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/BizModel.ftl.java",
+        "respListOutFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/ConductoCobro.java",
+        "FTL_package": "mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model",
+        "FTL_Model": "ConductoCobro",
+        "FTL_instanceOf": "ConductoCobro",
+        "FTL_extends": "mx.t2i.tekhne.core.model.RootObject"
+
+
+        } 
+      },
+       {
+      "searchAttributes":[
+  
+      ]
+   },
+    {
+      "attributesObjMap":[
+        {"nombre": "titularCuenta", "tipo": "String", "valor": "null"},
+        {"nombre": "numCuenta", "tipo": "String", "valor": "null"},
+        {"nombre": "cveBanco", "tipo": "Integer", "valor": "null"},
+        {"nombre": "sucursal", "tipo": "String", "valor": "null"},
+        {"nombre": "tipoCondCobro", "tipo": "String", "valor": "null"},
+        {"nombre": "tipoCuenta", "tipo": "Integer", "valor": "null"},
+        {"nombre": "funcionario", "tipo": "String", "valor": "null"},
+        {"nombre": "aaVencimiento", "tipo": "Integer", "valor": "null"},
+        {"nombre": "mmVencimiento", "tipo": "String", "valor": "null"},
+        {"nombre": "tipoTarjeta", "tipo": "String", "valor": "null"}
+
+      ]
+    }
+]

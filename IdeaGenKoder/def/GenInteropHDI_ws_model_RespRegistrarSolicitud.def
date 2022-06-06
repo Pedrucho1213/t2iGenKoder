@@ -1,0 +1,21 @@
+Plantilla: GenInteropHDI_ws_model_RespRegistrarSolicitud.def
+
+#importList
+import java.util.List;
+import java.util.ArrayList;
+import org.springframework.beans.factory.annotation.Autowired;
+import mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model.RespCliente;
+import mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model.RespPoliza;
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model/RespWsModel.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model/RespRegistrarSolicitud.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model
+FTL_Model: RespRegistrarSolicitud
+FTL_extends: /*mx.t2i.tekhne.core.model.Root*/Object
+
+#attributesObjMap
+"respCliente", "RespCliente", "null"
+"respPoliza", "RespPoliza", "null"
+
+#

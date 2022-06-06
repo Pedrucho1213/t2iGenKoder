@@ -1,0 +1,47 @@
+{
+  "global": {
+    "menu": {
+      "entities": {
+        "opcger": "ManagementOptions"
+      }
+    }
+  },
+  "breadcrumb": {
+    "opcger": "ManagementOptions"
+  },
+  "appMain": {
+    "opcger": {
+      "home": {
+        "title": "ManagementOptions",
+        "createLabel": "Create a new ManagementOption",
+        "createOrEditLabel": "Crearte or edit ManagementOption",
+        "editLabel": "Edit ManagementOption",
+        "viewLabel": "Detail ManagementOption",
+        "deleteLabel": "Delete ManagementOption",
+        "notFound": "No ManagementOption was found"
+      },
+      "created": "A new opcger has been created, id: {{ param }}",
+      "updated": "A ManagementOption has been updated, id: {{ param }}",
+      "deleted": "A ManagementOption has been deleted, id: {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete ManagementOption ({{ id }}) {{ desc }} ?"
+      },
+      "detail": {
+        "title": "ManagementOption"
+      },
+      "id": "ID",
+      "ramsubramo": "ramo-subramo",
+      "moneda": "currency",
+      "numnorma": "normanum",
+      "finivig": "initdate",
+      "descnorm": "normadesc",
+      "help": {
+        "ramsubramo": "Ramo/Subramo",
+        "moneda": "Currency",
+        "numnorma": "Normanum",
+        "finivig": "InitDate",
+        "descnorm": "NormaDesc"
+        }
+    }
+  }
+}

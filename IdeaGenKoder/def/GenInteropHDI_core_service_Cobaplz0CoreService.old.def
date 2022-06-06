@@ -1,0 +1,16 @@
+Plantilla: GenInteropHDI_core_service_Cobaplz0CoreService.def
+
+#importList
+
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service/CoreService.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service/Cobaplz0CoreService.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service
+FTL_Model: Cobaplz0CoreService
+FTL_extends: mx.t2i.tekhne.core.model.BaseInterfaceModel
+FTL_CORE_SYSTEM: TIIGCAYE
+FTL_CORE_PROGRAM: COBAPLZ0
+FTL_coreModel: Cobaplz0
+
+#

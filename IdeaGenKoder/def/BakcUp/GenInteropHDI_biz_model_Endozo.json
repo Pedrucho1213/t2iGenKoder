@@ -1,0 +1,41 @@
+Plantilla: GenInteropHDI_ws_model_Endozo.def
+
+[
+   {
+      "importList":[
+        "import java.util.Date",
+        "import java.util.List",
+        "import javax.xml.bind.annotation.XmlElement",
+        "import org.springframework.beans.factory.annotation.Autowired"
+    ]
+   },
+   {
+     "respListObjMap":{
+        "respListFtlFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/BizModel.ftl.java",
+        "respListOutFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/Endozo.java",
+        "FTL_package": "mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model",
+        "FTL_Model": "Endozo",
+        "FTL_instanceOf": "Endozo",
+        "FTL_extends": "mx.t2i.tekhne.core.model.RootObject"
+
+        } 
+      },
+       {
+      "searchAttributes":[
+  
+      ]
+   },
+    {
+      "attributesObjMap":[
+        {"nombre": "folioEndoso", "tipo": "Integer", "valor": "null"},
+        {"nombre": "numEndoso", "tipo": "Integer", "valor": "null"},
+        {"nombre": "idStatusEndoso", "tipo": "Integer", "valor": "null"},
+        {"nombre": "fStatusEndoso", "tipo": "String", "valor": "null"},
+        {"nombre": "idTipoEndoso", "tipo": "Integer", "valor": "null"},
+        {"nombre": "descrTipoEndoso", "tipo": "String", "valor": "null"},
+        {"nombre": "idCveMovimiento", "tipo": "Integer", "valor": "null"},
+        {"nombre": "descrCveMovto", "tipo": "String", "valor": "null"}
+
+      ]
+    }
+]

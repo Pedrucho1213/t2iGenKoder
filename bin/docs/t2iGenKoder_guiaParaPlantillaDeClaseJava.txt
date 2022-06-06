@@ -1,0 +1,76 @@
+#t2iGenKoder_guiaParaPrepararTemplate.txt
+-----------------------------------------------------
+GUIA PARA CREAR PLANTILLA DE UNA CLASE JAVA
+-----------------------------------------------------
+[ Suponiendo que la nueva se llamara "Clase" ]
+1) Copiar la GenOpcgerx0.java como GenClase.java
+2) Copiar la Clase.java como ftl/Clase.ftl.java
+
+3) Para cada cadenaIdentificadora hacer su remplazo [ en modo Case sensitive ] por su token respectivo:
+	- En Clase.ftl.java remplazar "Clase" por ${FTL_Model} Por ejemplo: "Opcgerx0" por "${FTL_Model}"
+	- En el método input() de GenClase.java agregar al datasource. Por ejemplo: dataSource.put("FTL_Model", "Opcgerx0");
+
+	- En Clase.ftl.java remplazar "clase" por ${FTL_model} Por ejemplo: "opcgerx0" por "${FTL_model}"
+	- En el método input() de GenClase.java agregar al datasource. Por ejemplo: dataSource.put("FTL_Model", "opcgerx0");
+
+	- En Clase.ftl.java remplazar "clase" por ${FTL_MODEL} Por ejemplo: "OPCGERX0" por "${FTL_MODEL}"
+	- En el método input() de GenClase.java agregar al datasource. Por ejemplo: dataSource.put("FTL_MODEL", "OPCGERX0");
+
+4) Para los atributos de la clase, remplazar la lista de declaraciones private por:
+<#list FTL_searchAttributes as FTL_searchAttribute>
+    private ${FTL_searchAttribute.javaType} ${FTL_searchAttribute.javaName} = ${FTL_searchAttribute.javaInit};
+</#list>
+<#list FTL_fieldAttributes as FTL_fieldAttribute>
+    private ${FTL_fieldAttribute.javaType} ${FTL_fieldAttribute.javaName} = ${FTL_fieldAttribute.javaInit};
+</#list>
+
+<#-- Comentar para omitir las declaraciones en duro: ----------------
+	private Integer ramsubramo = null;
+	private Integer moneda = null;
+	private Integer numnorma = null;
+	private Date finivig = null;
+	private String descnorm = null;
+-------------------------------------------------------------------->
+
+
+5) De igual manera, prototipear como listas para los métodos getters y setters:
+<#list FTL_searchAttributes as FTL_searchAttribute>
+    public ${FTL_searchAttribute.javaType} get${FTL_searchAttribute.javaNameCapitalizingFirstLetter}() {
+        return ${FTL_searchAttribute.javaName};
+    }
+
+
+    public void set${FTL_searchAttribute.javaNameCapitalizingFirstLetter}(${FTL_searchAttribute.javaType} ${FTL_searchAttribute.javaName}) {
+        this.${FTL_searchAttribute.javaName} = ${FTL_searchAttribute.javaName};
+    }
+
+
+</#list>
+
+<#list FTL_fieldAttributes as FTL_fieldAttribute>
+public ${FTL_fieldAttribute.javaType} get${FTL_fieldAttribute.javaNameCapitalizingFirstLetter}() {
+    return ${FTL_fieldAttribute.javaName};
+}
+
+
+public void set${FTL_fieldAttribute.javaNameCapitalizingFirstLetter}(${FTL_fieldAttribute.javaType} ${FTL_fieldAttribute.javaName}) {
+    this.${FTL_fieldAttribute.javaName} = ${FTL_fieldAttribute.javaName};
+}
+
+
+</#list>
+
+
+6) De manera similar, prototipear como listas para el método clear() 
+8) De manera parecida, prototipear como listas para el método toString()
+9) De manera equivalente, prototipear como listas para el método equals()
+10) De manera análoga, prototipear como listas para el método hashCode()
+11) Si existe, prototipear como listas para el método auxGetSearchFields()
+12) Si existe, prototipear como listas para el método auxGetTransactionFields()
+13) Si aplica, prototipear como listas para el método auxSetValuesFromMap()
+14) Si existe, prototipear como listas para el método auxGetListFromCore()
+
+
+
+
+

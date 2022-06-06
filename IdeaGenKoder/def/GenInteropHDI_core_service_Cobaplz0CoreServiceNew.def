@@ -1,0 +1,17 @@
+
+
+
+
+    {
+      "tags": [ {
+         "respListFtlFileName" : "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service/CoreService.ftl.java",
+         "respListOutFileName" : "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service/Cobaplz0CoreService.java",
+         "ftl_package" : "mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service",
+         "ftl_Model" : "Cobaplz0CoreService",
+         "ftl_extends" : "mx.t2i.tekhne.core.model.BaseInterfaceModel",
+         "ftl_CORE_SYSTEM" : "TIIGCAYE",
+         "ftl_CORE_SYSTEM" : "COBAPLZ0",
+         "ftl_coreModel" : "Cobaplz0"
+      } ]
+   }
+

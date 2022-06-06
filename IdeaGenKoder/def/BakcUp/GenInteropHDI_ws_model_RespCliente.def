@@ -1,0 +1,19 @@
+Plantilla: GenInteropHDI_ws_model_RespCliente.def
+
+#importsList
+import java.util.List;
+import javax.xml.bind.annotation.XmlElement;
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model/RespWsModel.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model/RespCliente.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model
+FTL_Model: RespCliente
+FTL_instanceOf: RespCliente
+
+#attributesObjMap
+"numcliente", "Integer", "null"
+
+
+
+#

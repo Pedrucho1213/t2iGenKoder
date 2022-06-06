@@ -1,0 +1,90 @@
+<div *ngIf="value" [formGroup]="editForm">
+  <app-alert-error></app-alert-error>
+  <app-alert></app-alert>
+<!--INI TAB 1 HEADER -->
+<mat-tab-group #tabs="matTabGroup" class="mat-tab-heigh-60" dynamicHeight>
+  <mat-tab>
+    <ng-template mat-tab-label>
+<!--
+      <span *ngIf="isFormSectionInvalid(0)" class="text-red">{{ '* &nbsp;' }}</span>
+      <span [ngClass]="{ 'text-red' : isFormSectionInvalid(0) }" appTranslate="appMain.opcger.detail.general-data">General Data</span>
+-->
+      <span appTranslate="appMain.opcger.detail.general-data">General Data</span>
+    </ng-template>
+    <ng-template matTabContent>
+      <div class="p-6 mat-accordion-section-panel-450" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="150">
+ <!--FIN TAB 1 HEADER -->
+
+  <div class="mt-4" fxLayout="column" fxLayoutGap="8px">
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+      <mat-form-field fxFlex="20%">
+        <mat-label appTranslate="global.field.id">Id</mat-label>
+        <input matInput class="mat-highlight-read-only" autocomplete="off" formControlName="id" />
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+      <mat-form-field fxFlex="35%">
+        <mat-label appTranslate="appMain.opcger.ramsubramo">rAmsUbramo</mat-label>
+        <input matInput class="mat-highlight-read-only" autocomplete="off" formControlName="ramsubramo" />
+      </mat-form-field>
+
+      <mat-form-field fxFlex="35%">
+        <mat-label appTranslate="appMain.opcger.moneda">monedA</mat-label>
+        <input matInput class="mat-highlight-read-only" autocomplete="off" formControlName="moneda" />
+      </mat-form-field>
+
+      <mat-form-field fxFlex="30%">
+        <mat-label appTranslate="appMain.opcger.numnorma">numnormA</mat-label>
+        <input matInput class="mat-highlight-read-only" autocomplete="off" formControlName="numnorma" />
+      </mat-form-field>
+
+    </div>
+  </div>
+
+  <div class="mt-4" fxLayout="column" fxLayoutGap="8px">
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+
+    </div>
+  </div>
+
+  <div class="mt-4" fxLayout="column" fxLayoutGap="8px">
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="8px" fxLayoutGap.gt-xs="24px">
+
+      <mat-form-field fxFlex="30%">
+        <mat-label>
+          <span appTranslate="appMain.opcger.finivig"
+            matTooltip="{{ 'appMain.opcger.help.finivig' | translate }}">FechA
+          </span>
+        </mat-label>
+        <input
+          matInput class="mat-highlight-read-only"
+          autocomplete="off"
+          formControlName="finivig"
+          type="text"
+          name="finivig"
+          id="field_finivig"
+          [placeholder]="'appMain.opcger.help.finivig' | translate"
+          [matDatepicker]="dp"
+          data-cy="finivig"
+        />
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="70%">
+        <mat-label appTranslate="appMain.opcger.descnorm">descnorM</mat-label>
+        <input matInput class="mat-highlight-read-only" autocomplete="off" formControlName="descnorm" />
+      </mat-form-field>
+
+    </div>
+  </div>
+<!-- INI TAB 1 FOOTER -->
+</div><!-- class="p-6 mat-accordion-section-panel-450" -->
+</ng-template>
+</mat-tab>
+<!-- FIN TAB 1 FOOTER -->
+
+</mat-tab-group>
+</div>
+

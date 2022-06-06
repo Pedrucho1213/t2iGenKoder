@@ -1,0 +1,41 @@
+Plantilla: GenInteropHDI_core_model_Endogmc0.def
+
+
+[
+   {
+      "importList":[
+        import java.text.SimpleDateFormat
+
+      ]
+   },
+   {
+     "respListObjMap":{
+        "respListFtlFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/Core.ftl.java",
+        "respListOutFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/Endogmc0.java",
+        "FTL_package": "mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model",
+        "FTL_Model": "Endogmc0",
+        "FTL_instanceOf": "Endogmc0",
+        "FTL_extends": "mx.t2i.tekhne.core.model.BaseInterfaceModel"
+
+
+        } 
+      },
+       {
+      "searchAttributes":[
+  
+      ]
+   },
+    {
+      "attributesObjMap":[
+        {"nombre": "folendoso", "tipo": "Integer", "valor": "null"},
+        {"nombre": "nendoso", "tipo": "Integer", "valor": "null"},
+        {"nombre": "stendoso", "tipo": "Integer", "valor": "null"},
+        {"nombre": "fstat", "tipo": "String", "valor": "null"},
+        {"nombre": "tpendoso", "tipo": "Integer", "valor": "null"},
+        {"nombre": "tpendoso_i", "tipo": "String", "valor": "null"},
+        {"nombre": "movendoso", "tipo": "Integer", "valor": "null"},
+        {"nombre": "movendoso_i", "tipo": "String", "valor": "null"},
+
+      ]
+    }
+]

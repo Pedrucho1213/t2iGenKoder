@@ -1,0 +1,38 @@
+// ################################################################################################
+//
+// Script de configuracion de Documentacion de codigo fuente con DoxyGen
+//
+// By: Erick I. Jimenez (erickjx@yahoo.com.mx)
+//
+// ################################################################################################
+
+// Documentacion Doxygen
+// gradle doxygen
+doxygen {
+    println "  > Generating Doxygen Documentation.."
+
+    //description = "${project.description}"
+
+    generate_html   true
+    generate_latex  true
+
+    source new File(projectDir,'src/main/java')
+
+    template 'gradle/doxygen/Doxyfile'
+
+    //FIX para poner descripcion dentro del template en PROJECT_BRIEF
+    project_brief "${project.description}"
+
+    //outputDir new File(buildDir,"${buildDir}/docs/doxygen")
+    //outputDir new File(projectDir,"${buildDir}/docs/doxygen")
+    //outputDir new File(projectDir,"build/docs/doxygen")
+
+    //output_directory  new File(buildDir,"${buildDir}/docs/doxygen)")
+
+    //project_logo            new File(projectDir,'gradle/config/doxygen/logo.png')
+    //project_name            't2iPrintPDF V2.0'
+    //image_paths  'gradle/config/doxygen'
+
+    //input_encoding          'UTF-8'
+
+}

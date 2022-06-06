@@ -1,0 +1,25 @@
+dependencies {
+    // Dependencias para el modulo
+    implementation ("mx.koder:koder-core:${koder_version}") {
+        changing = true
+    }
+    implementation ("mx.koder:koder-runtime:${koder_version}") {
+        changing = true
+    }
+    // Opcional
+    implementation ("mx.koder:koder-extras-db-mariadb:${koder_version}") {
+        changing = true
+    }
+    // implementation ("mx.koder:koder-extras-db-postgresql:${koder_version}") {
+    //     changing = true
+    // }
+    implementation ("mx.koder:koder-extras:${koder_version}") {
+        changing = true
+    }
+    implementation ("mx.t2i:lib-app-runtime:${app_version}") {
+        changing = true
+    }
+    implementation ("mx.t2i:lib-app-business:${app_version}") {
+        changing = true
+    }
+}

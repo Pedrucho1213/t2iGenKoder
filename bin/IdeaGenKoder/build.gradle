@@ -1,0 +1,26 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.5.4'
+}
+
+bootRun {
+    // 2022-05-11 ggm: Para evitar el error de deprecation para la clase main
+    mainClass.set("mx.t2i.ideaGenKoder.Main")
+    // 2022-05-26 ggm: Para leer parametros desde la línea de comando, 
+    //    ejemplo: gradle run -PappArgs="['arg1', 'args2']"
+    if (project.hasProperty('args')) {
+        args project.args.split(' ')
+    }
+ }
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    gradlePluginPortal()
+
+    maven { url "https://repo.spring.io/plugins-release" }
+}
+
+dependencies {
+	    implementation 'org.freemarker:freemarker:2.3.31'
+}

@@ -1,0 +1,30 @@
+Plantilla: GenInteropHDI_ws_model_ConductoCobro.def
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/BizModel.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/ConductoCobro.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model
+FTL_Model: ConductoCobro
+FTL_instanceOf: ConductoCobro
+FTL_extends: mx.t2i.tekhne.core.model.RootObject
+
+#importList
+import java.util.Date
+import java.util.List
+import javax.xml.bind.annotation.XmlElement
+import org.springframework.beans.factory.annotation.Autowired
+
+#attributesObjMap
+"titularCuenta", "String", "null"
+"numCuenta", "String", "null"
+"cveBanco", "Integer", "null"
+"sucursal", "String", "null"
+"tipoCondCobro", "String", "null"
+"tipoCuenta", "Integer", "null"
+"funcionario", "String", "null"
+"aaVencimiento", "Integer", "null"
+"mmVencimiento", "String", "null"
+"tipoTarjeta", "String", "null"
+
+
+#

@@ -1,0 +1,78 @@
+Plantilla: GenInteropHDI_ws_model_Cliente.def
+
+[
+   {
+      "importList":[
+        "import java.util.Date",
+        "import java.util.List",
+        "import javax.xml.bind.annotation.XmlElement",
+        "import org.springframework.beans.factory.annotation.Autowired"
+
+      ]
+   },
+   {
+     "respListObjMap":{
+        "respListFtlFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/BizModel.ftl.java",
+        "respListOutFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/Cliente.java",
+        "FTL_package": "mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model",
+        "FTL_Model": "Cliente",
+        "FTL_instanceOf": "Cliente",
+        "FTL_extends": "mx.t2i.tekhne.core.model.RootObject"
+
+
+        } 
+      },
+       {
+      "searchAttributes":[
+          {"nombre": "numcliente", "tipo": "Integer", "valor": "null"}
+
+      ]
+   },
+    {
+      "attributesObjMap":[
+        {"nombre": "numcliente", "tipo": "Integer", "valor": "null"},
+        {"nombre": "cvperson", "tipo": "Integer", "valor": "null"},
+        {"nombre": "rfcsiglas", "tipo": "String", "valor": "null"},
+        {"nombre": "rfcfecha", "tipo": "String", "valor": "null"},
+        {"nombre": "rfchomon", "tipo": "String", "valor": "null"},
+        {"nombre": "curp", "tipo": "String", "valor": "null"},
+        {"nombre": "nombre", "tipo": "String", "valor": "null"},
+        {"nombre": "appat", "tipo": "String", "valor": "null"},
+        {"nombre": "apmat", "tipo": "String", "valor": "null"},
+        {"nombre": "nomcomp1", "tipo": "String", "valor": "null"},
+        {"nombre": "edocivil", "tipo": "Integer", "valor": "null"},
+        {"nombre": "cvsexo", "tipo": "Integer", "valor": "null"},
+        {"nombre": "fnac", "tipo": "Date", "valor": "null"},
+        {"nombre": "paisnac", "tipo": "Integer", "valor": "null"},
+        {"nombre": "estatura", "tipo": "Double", "valor": "null"},
+        {"nombre": "nacionld", "tipo": "Integer", "valor": "null"},
+        {"nombre": "peso", "tipo": "Double", "valor": "null"},
+        {"nombre": "tpidentif", "tipo": "Integer", "valor": "null"},
+        {"nombre": "ndocident", "tipo": "String", "valor": "null"},
+        {"nombre": "cvcompdom", "tipo": "Integer", "valor": "null"},
+        {"nombre": "email", "tipo": "String", "valor": "null"},
+        {"nombre": "ocup", "tipo": "String", "valor": "null"},
+        {"nombre": "calle", "tipo": "String", "valor": "null"},
+        {"nombre": "numext", "tipo": "String", "valor": "null"},
+        {"nombre": "numint", "tipo": "String", "valor": "null"},
+        {"nombre": "codpost", "tipo": "Integer", "valor": "null"},
+        {"nombre": "colonia", "tipo": "String", "valor": "null"},
+        {"nombre": "poblacion", "tipo": "String", "valor": "null"},
+        {"nombre": "edo", "tipo": "Integer", "valor": "null"},
+        {"nombre": "cvemunpo", "tipo": "Integer", "valor": "null"},
+        {"nombre": "telefono", "tipo": "String", "valor": "null"},
+        {"nombre": "usocfdi", "tipo": "String", "valor": "null"},
+        {"nombre": "acteco", "tipo": "Integer", "valor": "null"},
+        {"nombre": "perspolexp", "tipo": "Integer", "valor": "null"},
+        {"nombre": "nombrycgo", "tipo": "String", "valor": "null"},
+        {"nombre": "apodlegal", "tipo": "String", "valor": "null"},
+        {"nombre": "tpregimn", "tipo": "Integer", "valor": "null"},
+        {"nombre": "cvegiro", "tipo": "Integer", "valor": "null"},
+        {"nombre": "cargopolit", "tipo": "Integer", "valor": "null"},
+        {"nombre": "actividfui", "tipo": "Integer", "valor": "null"},
+        {"nombre": "actfuitext", "tipo": "String", "valor": "null"},
+        {"nombre": "actfteingr", "tipo": "String", "valor": "null"}
+
+      ]
+    }
+]

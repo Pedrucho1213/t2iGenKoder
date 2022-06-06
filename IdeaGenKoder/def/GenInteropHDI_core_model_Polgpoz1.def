@@ -1,0 +1,48 @@
+Plantilla: GenInteropHDI_core_model_Polgpoz1.def
+
+#importList
+
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/CoreModel.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/Polgpoz1.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model
+FTL_Model: Polgpoz1
+FTL_extends: mx.t2i.tekhne.core.model.BaseInterfaceModel
+FTL_CORE_PROGRAM: POLGPOX1
+
+#searchAttributes
+"ramsubramo", "Integer", "null"
+"npoliza", "Integer", "null"
+
+
+#attributesObjMap
+"ramsubramo", "Integer", "null"
+"npoliza", "Integer", "null"
+"stpoliza", "Integer", "null"
+"npolorg", "Integer", "null"
+"npolcoas", "String", "null"
+"ncotiza", "Integer", "null"
+"numcliente", "Integer", "null"
+"finivig", "Integer", "null"
+"ftervig", "Integer", "null"
+"nesqfpago", "Integer", "null"
+"nesqgexp", "Integer", "null"
+"tpiva", "Integer", "null"
+"tpdocum", "Integer", "null"
+"topecoas", "Double", "null"
+"tpconcod", "Integer", "null"
+"idconcob", "String", "null"
+"tpcomis", "Integer", "null"
+"nagente1", "Integer", "null"
+"porcpart1", "Double", "null"
+"nagente2", "Integer", "null"
+"porcpart2", "Double", "null"
+"nagente3", "Integer", "null"
+"porcpart3", "Double", "null"
+"porcredag", "Double", "null"
+"porcredsu", "Double", "null"
+"descpma02", "Double", "null"
+
+
+#

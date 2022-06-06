@@ -1,0 +1,22 @@
+<div *ngIf="listPage">
+  <app-table
+    [columns]="columns"
+    [data]="listPage"
+    [totalItems]="totalItems"
+    [pageSize]="itemsPerPage"
+    [pageSizeOptions]="pageSizeOptions"
+    [headerProperties]="headerProperties"
+    [buttons]="buttons"
+    [showFirstLastButtons]="true"
+    [stickyActionButtons]="true"
+    (paginatorEvents)="loadPage($event)"
+    (buttonsEvents)="buttonsEvents($event)"
+    (addEvent)="newItem()"
+    (refreshEvent)="loadPage($event)"
+  >
+  </app-table>
+</div>
+
+<div *ngIf="!listPage">
+  <mat-skeleton-loader-table></mat-skeleton-loader-table>
+</div>

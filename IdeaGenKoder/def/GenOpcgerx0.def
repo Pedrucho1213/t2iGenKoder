@@ -1,0 +1,124 @@
+Plantilla: GenOpcgerx0.data
+#CoreService
+
+#BizService
+
+#WebService
+
+
+#entityObjMap
+entityFtlFileName: src.main.java.mx.t2i.opcger.core.model/Opcgerx0.ftl.java
+entityOutFileName: src.main.java.mx.t2i.opcger.core.model/Opcgerx0.java
+FTL_package: mx.t2i.t2iSabeOpcger.opcger.core.model
+FTL_Model: Opcgerx0
+FTL_model: opcgerx0
+FTL_MODEL: OPCGERX0
+FTL_ListVO:	opcgerx0
+
+#entityPojoObjMap
+entityPojoFtlFileName: src.main.java.mx.t2i.opcger.core.model/Opcgerx0VO.ftl.java
+entityPojoOutFileName: src.main.java.mx.t2i.opcger.core.model/Opcgerx0VO.java
+FTL_package: mx.t2i.t2iSabeOpcger.opcger.core.model
+FTL_Model: Opcgerx0VO
+FTL_model: opcgerx0VO
+FTL_MODEL: OPCGERX0VO
+FTL_CORE_PROGRAM: OPCGERX0
+FTL_ListVO: Opcgerx0VO
+
+#coreServiceObjMap
+coreServiceFtlFileName: src.main.java.mx.t2i.opcger.core.service/Opcgerx0CoreService.ftl.java
+coreServiceOutFileName: src.main.java.mx.t2i.opcger.core.service/Opcgerx0CoreService.java
+FTL_package: mx.t2i.sabe.opcger.core.service
+FTL_CoreService: Opcgerx0CoreService
+FTL_coreService: opcgerx0CoreService
+FTL_CORESERVICE: OPCGERX0CoreService
+FTL_CORE_SYSTEM: TIIGCAYE
+FTL_CORE_PROGRAM: OPCGERZ0
+FTL_ListVO: Opcgerx0VO
+
+#resultListObjMap
+resultListFtlFileName: src.main.java.mx.t2i.opcger.biz.model/ResultOpcgerList.ftl.java
+resultListOutFileName: src.main.java.mx.t2i.opcger.biz.model/ResultOpcgerList.java
+FTL_package: mx.t2i.sabe.opcger.biz.model
+FTL_ResultList: ResultOpcgerList
+FT_resultList: resultOpcgerList
+
+#reqListObjMap
+reqListFtlFileName: src.main.java.mx.t2i.opcger.ws.model/ReqOpcgerList.ftl.java
+reqListOutFileName: src.main.java.mx.t2i.opcger.ws.model/ReqOpcgerList.java
+FTL_package: mx.t2i.sabe.opcger.ws.model
+FTL_ReqList: ReqOpcgerList
+FT_reqtList: reqOpcgerList
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.opcger.ws.model/RespOpcgerList.ftl.java
+respListOutFileName: src.main.java.mx.t2i.opcger.ws.model/RespOpcgerList.java
+FTL_package: mx.t2i.sabe.opcger.ws.model
+FTL_RespList: RespOpcgerList
+FTL_ResultList: ResultOpcgerList
+FT_respList: respOpcgerList
+
+
+#entityServiceObjMap
+entityServiceFtlFileName: src.main.java.mx.t2i.tiigcaye.service.criteria/OpcgerService.ftl.java
+entityServiceOutFileName: src.main.java.mx.t2i.tiigcaye.service.criteria/OpcgerService.java
+FTL_package: mx.t2i.tiigcaye.service
+FTL_Service: OpcgerService
+FTL_CoreService: Opcgerx0CoreService
+FTL_coreService: opcgerx0CoreService
+FTL_Model: Opcgerx0
+            
+#entityDTOObjMap
+entityDTOFtlFileName: src.main.java.mx.t2i.tiigcaye.service.dto/OpcgerDTO.ftl.java
+entityDTOutFileNam: src.main.java.mx.t2i.tiigcaye.service.dto/OpcgerDTO.java
+FTL_package: mx.t2i.tiigcaye.service.dto
+FTL_ClassDTO: OpcgerDTO
+FTL_CatDTO: CatramosDTO
+FTL_catDTO: catramosDTO
+FTL_Cat: Catramos
+FTL_cat: catramos
+
+            
+#entityResourceObjMap
+entityResourceFtlFileName: src.main.java.mx.t2i.tiigcaye.web.rest/OpcgerResource.ftl.java
+entityResourceOutFileName: src.main.java.mx.t2i.tiigcaye.web.rest/OpcgerResource.java
+FTL_package: mx.t2i.tiigcaye.web.rest
+FTL_Class: OpcgerResource
+FTL_opcGer: t2iSabeOpcger
+FTL_model: opcger
+FTL_Model: Opcger
+FTL_Service: OpcgerService
+FTL_service: opcgerService
+FTL_OpcDTO: OpcgerDTO
+FTL_opcDTO: opcgerDTO
+FTL_clientApp: ${app.clientApp.name}
+
+#attributesObjMap
+"valor01", "Double", "null"
+"valor02", "Double", "null"
+"valor03", "Double", "null"
+"valor04", "Double", "null"
+"valor05", "Double", "null"
+"valor06", "Double", "null"
+"valor07", "Double", "null"
+"valor08", "Double", "null"
+"valor09", "Double", "null"
+"valor10", "Double", "null"
+"valor11", "Double", "null"
+"valor12", "Double", "null"
+"descval01", "String", "null"
+"descval02", "String", "null"
+"descval03", "String", "null"
+"descval04", "String", "null"
+"descval05", "String", "null"
+"descval06", "String", "null"
+"descval07", "String", "null"
+"descval08", "String", "null"
+"descval09", "String", "null"
+"descval10", "String", "null"
+"descval11", "String", "null"
+"descval12", "String", "null"
+"nombrel", "String", "null"))
+"moneda_i", "String", "null")
+
+#

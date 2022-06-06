@@ -1,0 +1,70 @@
+{
+
+info: [
+   {
+      "messageAppendedText": "The Assignee field must contain a value.  Choose an assignee from the associated field menu, then save the Incident.",
+      "messageText": "null",
+      "messageType": "ERROR",
+      "messageNumber": "1291205"
+   }
+    ],
+blaBla: [
+   {
+      "messageAppendedText": "El valor esta asignado en españolt.",
+      "messageText": "nullos",
+      "messageType": "Tipo de errro",
+      "messageNumber": "666666666666"
+   }
+    ]
+}
+
+            String errorMessage = "[{\"messageType\":\"ERROR\",\"messageText\":\"null\",\"messageNumber\":\"1291205\",\"messageAppendedText\":\"The Assignee field must contain a value.  Choose an assignee from the associated field menu, then save the Incident.\"}], [{\"messageType\":\"aaaa\",\"messageText\":\"5555\",\"messageNumber\":\"66666\",\"messageAppendedText\":\"En español.\"}";
+  [{\"messageType\":\"ERROR\",\"messageText\":\"null\",\"messageNumber\":\"1291205\",\"messageAppendedText\":\"The Assignee field must contain a value.  Choose an assignee from the associated field menu, then save the Incident.\"}]  [{\"messageType\":\"aaaa\",\"messageText\":\"5555\",\"messageNumber\":\"66666\",\"messageAppendedText\":\"En español.\"}]";
+
+
+  
+    {
+      "importList":[
+         "import org.json.simple.JSONArray",
+         "import org.json.simple.JSONObject",
+         "import org.json.simple.parser.JSONParser"
+      ]
+   },
+  
+  
+  
+  {
+  "id" : 100,
+  "title" : "Jackson JSON API Guide",
+  "description" : "Post about Jackson JSON API",
+  "content" : "HTML content here",
+  "tags" : [ {
+    "id" : 1,
+    "name" : "JSON"
+  }, {
+    "id" : 2,
+    "name" : "Java"
+  }, {
+    "id" : 3,
+    "name" : "Jackson"
+  } ]
+}
+
+
+ORIGINAL====================
+
+    {
+      "tags": [ {
+         "respListFtlFileName" : "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service/CoreService.ftl.java",
+         "respListOutFileName" : "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service/Cobaplz0CoreService.java",
+         "ftl_package" : "mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service",
+         "ftl_Model" : "Cobaplz0CoreService",
+         "ftl_extends" : "mx.t2i.tekhne.core.model.BaseInterfaceModel",
+         "ftl_CORE_SYSTEM" : "TIIGCAYE",
+         "ftl_CORE_SYSTEM" : "COBAPLZ0",
+         "ftl_coreModel" : "Cobaplz0"
+      } ]
+   }
+
+
+

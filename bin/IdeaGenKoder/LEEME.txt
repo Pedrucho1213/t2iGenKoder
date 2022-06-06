@@ -1,0 +1,4 @@
+2021-09-10 ati: Ejemplo: Java Freemarker Templates (FTL) Tutorial with HTML Example
+Fuente:
+https://www.concretepage.com/freemarker/java-freemarker-templates-ftl-tutorial-with-html-example
+

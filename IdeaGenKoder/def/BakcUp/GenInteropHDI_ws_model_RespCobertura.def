@@ -1,0 +1,19 @@
+Plantilla: GenInteropHDI_ws_model_RespCobertura.def
+
+#importList
+import java.util.ArrayList;
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model/RespWsModel.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model/RespCobertura.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model
+FTL_Model: RespCobertura
+FTL_instanceOf: RespCobertura
+
+#attributesObjMap
+"ramsubramo", "String", "null"
+"npoliza", "Integer", "null"
+"ndepend", "Integer", "null"
+"tipoadic", "Integer", "null"
+
+#

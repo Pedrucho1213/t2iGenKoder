@@ -1,0 +1,38 @@
+Plantilla: GenInteropHDI_ws_model_RespAsegurado.def
+
+[
+   {
+      "importList":[
+        "import java.util.ArrayList;",
+        "import java.util.List;",
+        "import javax.xml.bind.annotation.XmlElement;",
+        "import org.springframework.beans.factory.annotation.Autowired;"
+
+      ]
+   },
+   {
+     "respListObjMap":{
+        "respListFtlFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model/RespWsModel.ftl.java",
+        "respListOutFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model/RespAsegurado.java",
+        "FTL_package": "mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model",
+        "FTL_Model": "RespAsegurado",
+        "FTL_instanceOf": "RespAsegurado"
+
+
+        } 
+      },
+       {
+      "searchAttributes":[
+  
+      ]
+   },
+    {
+      "attributesObjMap":[
+        {"nombre": "ramsubramo", "tipo": "String", "valor": "null"},
+        {"nombre": "npoliza", "tipo": "Integer", "valor": "null"},
+        {"nombre": "ndepend", "tipo": "Integer", "valor": "null"},
+        {"nombre": "coberturas", "tipo": "List<RespCobertura>", "valor": "null"}
+
+      ]
+    }
+]

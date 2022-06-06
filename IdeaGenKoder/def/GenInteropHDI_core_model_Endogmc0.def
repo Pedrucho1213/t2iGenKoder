@@ -1,0 +1,26 @@
+Plantilla: GenInteropHDI_core_model_Endogmc0.def
+
+#importList
+import java.text.SimpleDateFormat;
+
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/Core.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/Endogmc0.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model
+FTL_Model: Endogmc0
+FTL_instanceOf: Endogmc0
+FTL_extends: mx.t2i.tekhne.core.model.BaseInterfaceModel
+
+#attributesObjMap
+"folendoso", "Integer", "null"
+"nendoso", "Integer", "null"
+"stendoso", "Integer", "null"
+"fstat", "String", "null"
+"tpendoso", "Integer", "null"
+"tpendoso_i", "String", "null"
+"movendoso", "Integer", "null"
+"movendoso_i", "String", "null"
+
+
+#

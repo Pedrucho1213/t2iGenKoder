@@ -1,0 +1,17 @@
+Plantilla: GenInteropHDI_core_service_Catclix0Service.def
+
+#importList
+
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service/CoreService.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service/Polgmcc0Service.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service
+FTL_Model: Polgmcc0CoreService
+FTL_instanceOf: Polgmcc0
+FTL_extends: mx.t2i.tekhne.core.model.BaseInterfaceModel
+FTL_CORE_SYSTEM: TIIGCAYE
+FTL_CORE_PROGRAM: POLGMCY0
+FTL_coreModel: Catclix0
+
+#

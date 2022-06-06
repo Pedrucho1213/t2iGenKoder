@@ -1,0 +1,50 @@
+Plantilla: GenInteropHDI_ws_model_Asegurado.def
+
+#importList
+import java.util.ArrayList;
+import java.util.Date
+import java.util.List
+import javax.xml.bind.annotation.XmlElement
+import org.springframework.beans.factory.annotation.Autowired
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/BizModel.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/Asegurado.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model
+FTL_Model: Asegurado
+FTL_extends: /*mx.t2i.tekhne.core.model.Root*/Object
+
+#attributesObjMap
+"ramsubramo", "String", "null"
+"naseg", "String", "null"
+"finiseg", "Date", "null"
+"cvparent", "Integer", "null"
+"fantigcia", "Date", "null"
+"nomb", "String", "null"
+"memberid", "Integer", "null"
+"appat", "String", "null"
+"apmat", "String", "null"
+"fnac", "Date", "null"
+"rfcsiglas", "String", "null"
+"rfcfecha", "String", "null"
+"rfchomon", "String", "null"
+"cvsexo", "Integer", "null"
+"calle", "String", "null"
+"colonia", "String", "null"
+"municipio", "String", "null"
+"poblacion", "String", "null"
+"edo", "Integer", "null"
+"codpost", "Integer", "null"
+"telefono", "String", "null"
+"curp", "String", "null"
+"email", "String", "null"
+"tpubic", "Integer", "null"
+"acteco", "Integer", "null"
+"ocup", "String", "null"
+"paisnac", "Integer", "null"
+"nacionld", "Integer", "null"
+"perspolexp", "Integer", "null"
+"nombrycgo", "String", "null"
+
+
+#

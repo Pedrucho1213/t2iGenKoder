@@ -1,0 +1,112 @@
+package ${FTL_package};
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model.Agente;
+import mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model.Asegurado;
+import mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model.ConductoCobro;
+import mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model.Contratante;
+import mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model.Endoso;
+import mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model.Poliza;
+import mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model.Recibo;
+
+/**
+ * <h4>Description:</h4>
+ * Model para interfaz de webservice de RespRegistrarSolicitud
+ *
+ */
+@XmlType(propOrder={
+	<#list FTL_fieldAttributes as FTL_fieldAttribute>
+		"${FTL_fieldAttribute.javaName}",
+	</#list>
+					})
+@Component
+public class ${FTL_Model} extends mx.t2i.tekhne.core.model.BaseInterfaceModel //RespRegistrarSolicitud
+{
+	private static final long serialVersionUID = 1L;
+	<#list FTL_fieldAttributes as FTL_fieldAttribute>
+
+	@Autowired
+	private ${FTL_fieldAttribute.javaNameCapitalizingFirstLetter} ${FTL_fieldAttribute.javaName} = ${FTL_fieldAttribute.javaInit};
+	</#list>
+
+	/**
+    *
+    * Default constructor
+    */
+    public ${FTL_Model}()
+    {
+    	super();
+    }
+
+    @XmlElement(name="cliente") // Este nombre aparece en el response por cada item
+	<#list FTL_fieldAttributes as FTL_fieldAttribute>
+    public ${FTL_fieldAttribute.javaNameCapitalizingFirstLetter} get${FTL_fieldAttribute.javaNameCapitalizingFirstLetter}() {
+		return ${FTL_fieldAttribute.javaName};
+	}
+	public void set${FTL_fieldAttribute.javaNameCapitalizingFirstLetter}(${FTL_fieldAttribute.javaNameCapitalizingFirstLetter} ${FTL_fieldAttribute.javaName}) {
+		this.${FTL_fieldAttribute.javaName} = ${FTL_fieldAttribute.javaName};
+	}
+
+	</#list>
+
+	public void clear()
+    {
+    }
+    
+	public String toString()
+    {
+        StringBuilder r = new StringBuilder() ;
+
+        r
+        <#list FTL_fieldAttributes as FTL_fieldAttribute>
+        .append("${FTL_fieldAttribute.javaName}=").append( ${FTL_fieldAttribute.javaName} ).append("&")
+        </#list>
+
+        ;
+        return r.toString() ;
+    }
+
+    public boolean equals( Object obj )
+    {
+        boolean r = false;
+
+        if ( obj == null ) return false;
+        if ( ! ( obj instanceof ${FTL_Model} ) ) {  return false;
+
+        final ${FTL_Model} other = ( ${FTL_Model} ) obj ;
+        final EqualsBuilder equalsBuilder = new EqualsBuilder();
+
+        equalsBuilder.append( this.getClass().getName() , other.getClass().getName() );
+
+        <#list FTL_fieldAttributes as FTL_fieldAttribute>
+        equalsBuilder.append( this.${FTL_fieldAttribute.javaName} , other.${FTL_fieldAttribute.javaName} );
+        </#list>
+
+        r = equalsBuilder.isEquals() ;
+        return r ;
+    }
+
+    public int hashCode()
+    {
+        final HashCodeBuilder hashCodeBuilder = new HashCodeBuilder();
+
+        hashCodeBuilder.append( this.getClass().getName() );
+
+        <#list FTL_fieldAttributes as FTL_fieldAttribute>
+        hashCodeBuilder.append( ${FTL_fieldAttribute.javaName} );
+        </#list>
+
+        return hashCodeBuilder.toHashCode() ;
+    }
+
+}

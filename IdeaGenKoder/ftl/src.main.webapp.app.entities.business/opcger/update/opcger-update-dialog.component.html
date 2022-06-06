@@ -1,0 +1,31 @@
+<div fxLayout="row" fxLayoutAlign="start center" mat-dialog-title>
+  <h2 *ngIf="title" class="headline m-0" fxFlex="auto" appTranslate="{{ title }}">Delete</h2>
+
+  <button class="text-secondary" mat-dialog-close mat-icon-button type="button">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<mat-divider class="-mx-6 text-border"></mat-divider>
+
+<form novalidate (ngSubmit)="updateComponent?.save()" [formGroup]="parentForm">
+  <mat-dialog-content *ngIf="id || value" fxLayout="column" class="py-3">
+    <app-opcger-update
+      [id]="id"
+      [value]="value"
+      [message]="message"
+      [parentForm]="parentForm"
+      (auxSave)="auxSave($event)"
+      (formChange)="formChange('opcgerUpdate', $event!)"
+      (valueUpdate)="getUpdatedValue($event!)"
+    ></app-opcger-update>
+  </mat-dialog-content>
+
+  <mat-dialog-actions fxLayoutAlign="end">
+    <button type="button" mat-raised-button mat-dialog-close color="warn">
+      <mat-icon>block</mat-icon>&nbsp;<span appTranslate="entity.action.cancel">Cancel</span>
+    </button>
+    <button *ngIf="id || value" type="submit" color="primary" mat-raised-button [disabled]="!parentForm.valid">
+      <mat-icon>save</mat-icon>&nbsp;<span appTranslate="entity.action.save">Save</span>
+    </button>
+  </mat-dialog-actions>
+</form>

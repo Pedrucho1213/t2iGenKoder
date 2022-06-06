@@ -1,0 +1,403 @@
+package mx.t2i.ideaGenKoder.mapper;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import freemarker.core.ParseException;
+import freemarker.template.Configuration;
+import freemarker.template.MalformedTemplateNameException;
+import freemarker.template.Template;
+import freemarker.template.TemplateException;
+import freemarker.template.TemplateExceptionHandler;
+import freemarker.template.TemplateNotFoundException;
+import mx.t2i.ideaGenKoder.Config;
+import mx.t2i.ideaGenKoder.model.Blog;
+import mx.t2i.ideaGenKoder.model.BlogUrl;
+import mx.t2i.ideaGenKoder.model.FtlAttribute;
+
+public class GenOpcgerx0 {
+
+        private Configuration config;
+        private List<FtlAttribute> searchAttributes;
+        private List<FtlAttribute> fieldAttributes;
+
+        private String ftlNameOpcgerx0 = "src.main.java.mx.t2i.opcger.core.model/Opcgerx0.ftl.java";
+        private String outNameOpcgerx0 = "src.main.java.mx.t2i.opcger.core.model/Opcgerx0.java";
+        private Template ftlOpcgerx0;
+        private Map<String, Object> dataSourceOpcgerx0;
+
+
+        private String ftlNameOpcgerx0VO = "src.main.java.mx.t2i.opcger.core.model/Opcgerx0VO.ftl.java";
+        private String outNameOpcgerx0VO = "src.main.java.mx.t2i.opcger.core.model/Opcgerx0VO.java";
+        private Template ftlOpcgerx0VO;
+        private Map<String, Object> dataSourceOpcgerx0VO;
+
+        
+        private String ftlNameOpcgerx0CoreService = "src.main.java.mx.t2i.opcger.core.service/Opcgerx0CoreService.ftl.java";
+        private String outNameOpcgerx0CoreService = "src.main.java.mx.t2i.opcger.core.service/Opcgerx0CoreService.java";
+        private Template ftlOpcgerx0CoreService;
+        private Map<String, Object> dataSourceOpcgerx0CoreService;
+
+        
+        private String ftlNameResultOpcgerList = "src.main.java.mx.t2i.opcger.biz.model/ResultOpcgerList.ftl.java";
+        private String outNameResultOpcgerList = "src.main.java.mx.t2i.opcger.biz.model/ResultOpcgerList.java";
+        private Template ftlResultOpcgerList;
+        private Map<String, Object> dataSourceResultOpcgerList;
+
+        
+        private String ftlNameReqOpcgerList = "src.main.java.mx.t2i.opcger.ws.model/ReqOpcgerList.ftl.java";
+        private String outNameReqOpcgerList = "src.main.java.mx.t2i.opcger.ws.model/ReqOpcgerList.java";
+        private Template ftlReqOpcgerList;
+        private Map<String, Object> dataSourceReqOpcgerList;
+
+        
+        private String ftlNameRespOpcgerList = "src.main.java.mx.t2i.opcger.ws.model/RespOpcgerList.ftl.java";
+        private String outNameRespOpcgerList = "src.main.java.mx.t2i.opcger.ws.model/RespOpcgerList.java";
+        private Template ftlRespOpcgerList;
+        private Map<String, Object> dataSourceRespOpcgerList;
+        
+        // Variables de tiigcaye
+        private String ftlNameOpcgerService = "src.main.java.mx.t2i.tiigcaye.service.criteria/OpcgerService.ftl.java";
+        private String outNameOpcgerService = "src.main.java.mx.t2i.tiigcaye.service.criteria/OpcgerService.java";
+        private Template ftlOpcgerService;
+        private Map<String, Object> dataSourceOpcgerService;
+
+        private String ftlNameCatramosDTO = "src.main.java.mx.t2i.tiigcaye.service.dto/CatramosDTO.ftl.java";
+        private String outNameCatramosDTO = "src.main.java.mx.t2i.tiigcaye.service.dto/CatramosDTO.java";
+        private Template ftlCatramosDTO;
+        private Map<String, Object> dataSourceCatramosDTO;
+        
+        private String ftlNameOpcgerDTO = "src.main.java.mx.t2i.tiigcaye.service.dto/OpcgerDTO.ftl.java";
+        private String outNameOpcgerDTO = "src.main.java.mx.t2i.tiigcaye.service.dto/OpcgerDTO.java";
+        private Template ftlOpcgerDTO;
+        private Map<String, Object> dataSourceOpcgerDTO;
+        /*
+        private String ftlNameCatramosResource = "src.main.java.mx.t2i.tiigcaye.web.rest/CatramosResource.ftl.java";
+        private String outNameCatramosResource = "src.main.java.mx.t2i.tiigcaye.web.rest/CatramosResource.java";
+        private Template ftlCatramosResource;
+        private Map<String, Object> dataSourceCatramosResource;
+		*/ // Duplicado
+        private String ftlNameCatramosResource = "src.main.java.mx.t2i.tiigcaye.web.rest/CatramosResource.ftl.java";
+        private String outNameCatramosResource = "src.main.java.mx.t2i.tiigcaye.web.rest/CatramosResource.java";
+        private Template ftlCatramosResource;
+        private Map<String, Object> dataSourceCatramosResource;
+
+        
+        private String ftlNameOpcgerResource = "src.main.java.mx.t2i.tiigcaye.web.rest/OpcgerResource.ftl.java";
+        private String outNameOpcgerResource = "src.main.java.mx.t2i.tiigcaye.web.rest/OpcgerResource.java";
+        private Template ftlOpcgerResource;
+        private Map<String, Object> dataSourceOpcgerResource;
+        
+        public GenOpcgerx0() {
+            searchAttributes = new ArrayList<FtlAttribute>();
+            fieldAttributes = new ArrayList<FtlAttribute>();
+        }
+
+        public Configuration getConfig() {
+            return config;
+        }
+
+        public void setConfig(Configuration config) {
+            this.config = config;
+        }
+
+        public void input() throws TemplateNotFoundException, MalformedTemplateNameException, ParseException, IOException
+        {
+            //Instantiate template ( https://freemarker.apache.org/docs/pgui_quickstart_gettemplate.html ) 
+            /* Templates are represented by freemarker.template.Template instances. 
+             * Typically you obtain a Template instance from the Configuration instance, using its getTemplate method. 
+             * If you store the example template in the /where/you/store/templates/YourTemplate.ftlh file of the earlier set directory, then you can load it doing this:
+             */
+            ftlOpcgerx0 = config.getTemplate(ftlNameOpcgerx0);
+            ftlOpcgerx0VO = config.getTemplate(ftlNameOpcgerx0VO);
+            ftlOpcgerx0CoreService = config.getTemplate(ftlNameOpcgerx0CoreService);
+            ftlResultOpcgerList = config.getTemplate(ftlNameResultOpcgerList);
+            ftlReqOpcgerList = config.getTemplate(ftlNameReqOpcgerList);
+            ftlRespOpcgerList = config.getTemplate(ftlNameRespOpcgerList);
+            ftlOpcgerService = config.getTemplate(ftlNameOpcgerService);
+            ftlCatramosDTO = config.getTemplate(ftlNameCatramosDTO);
+            ftlOpcgerDTO = config.getTemplate(ftlNameOpcgerDTO);
+            //ftlCatramosResource = config.getTemplate(ftlNameCatramosResource);
+            ftlCatramosResource = config.getTemplate(ftlNameCatramosResource);
+            ftlOpcgerResource = config.getTemplate(ftlNameOpcgerResource);
+
+
+            /* This gives you a Template instance that was created by reading /where/you/store/templates/YourTemplate.ftlh 
+             * and parsing it. The Template instance stores the template in parsed form, and not as text. 
+             * If the template is missing or syntactically incorrect, getTemplate will throw exception instead.
+             * 
+             * Configuration caches Template instances, so when you call config.getTemplate("YourTemplate.ftlh") next time,
+             * it probably won't read and parse the template file again, just returns the same Template instance as for the first time.
+             */
+
+            //Create Data Model ( https://freemarker.apache.org/docs/pgui_quickstart_createdatamodel.html )
+            /* (...) As demonstrated above, for hashes (something that stores other named items) 
+             * you can use either a Map or any kind of public class that has public getXxx/isXxx methods as prescribed by the JavaBeans specification.
+             */
+            dataSourceOpcgerx0 = new HashMap<>();
+            dataSourceOpcgerx0.put("FTL_package" , "t2iSabeOpcger.opcger");
+            dataSourceOpcgerx0.put("FTL_Model"   , "Opcgerx0");
+            dataSourceOpcgerx0.put("FTL_model"   , "opcgerx0");
+            dataSourceOpcgerx0.put("FTL_MODEL"   , "OPCGERX0");
+            dataSourceOpcgerx0.put("FTL_searchAttributes" , searchAttributes);
+            dataSourceOpcgerx0.put("FTL_fieldAttributes"  , fieldAttributes);
+            dataSourceOpcgerx0.put("FTL_ListVO"  , "Opcgerx0VO");
+
+            dataSourceOpcgerx0VO = new HashMap<>();
+            dataSourceOpcgerx0VO.put("FTL_package" , "t2iSabeOpcger.opcger");
+            dataSourceOpcgerx0VO.put("FTL_Model"   , "Opcgerx0VO");
+            dataSourceOpcgerx0VO.put("FTL_model"   , "opcgerx0VO");
+            dataSourceOpcgerx0VO.put("FTL_MODEL"   , "OPCGERX0VO");
+            dataSourceOpcgerx0VO.put("FTL_searchAttributes" , searchAttributes);
+            dataSourceOpcgerx0VO.put("FTL_fieldAttributes"  , fieldAttributes);
+            dataSourceOpcgerx0VO.put("FTL_CORE_PROGRAM"   , "OPCGERX0");
+            dataSourceOpcgerx0VO.put("FTL_ListVO"  , "Opcgerx0VO");
+
+            dataSourceOpcgerx0CoreService = new HashMap<>();
+            dataSourceOpcgerx0CoreService.put("FTL_package" , "mx.t2i.sabe.opcger.core.service");
+            dataSourceOpcgerx0CoreService.put("FTL_CoreService"   , "Opcgerx0CoreService");
+            dataSourceOpcgerx0CoreService.put("FTL_coreService"   , "opcgerx0CoreService");
+            dataSourceOpcgerx0CoreService.put("FTL_CORESERVICE"   , "OPCGERX0CoreService");
+            dataSourceOpcgerx0CoreService.put("FTL_searchAttributes" , searchAttributes);
+            dataSourceOpcgerx0CoreService.put("FTL_fieldAttributes"  , fieldAttributes);
+            dataSourceOpcgerx0CoreService.put("FTL_CORE_SYSTEM"   , "TIIGCAYE");
+            dataSourceOpcgerx0CoreService.put("FTL_CORE_PROGRAM"   , "OPCGERZ0");
+            dataSourceOpcgerx0CoreService.put("FTL_ListVO"  , "Opcgerx0VO");
+            
+            dataSourceResultOpcgerList = new HashMap<>();
+            dataSourceResultOpcgerList.put("FTL_package" , "mx.t2i.sabe.opcger.biz.model");
+            dataSourceResultOpcgerList.put("FTL_ResultList"   , "ResultOpcgerList");
+            dataSourceResultOpcgerList.put("FT_resultList"   , "resultOpcgerList");
+            dataSourceResultOpcgerList.put("FTL_searchAttributes" , searchAttributes);
+            dataSourceResultOpcgerList.put("FTL_fieldAttributes"  , fieldAttributes);
+
+            dataSourceReqOpcgerList = new HashMap<>();
+            dataSourceReqOpcgerList.put("FTL_package" , "mx.t2i.sabe.opcger.ws.model");
+            dataSourceReqOpcgerList.put("FTL_ReqList"   , "ReqOpcgerList");
+            dataSourceReqOpcgerList.put("FT_reqtList"   , "reqOpcgerList");
+            dataSourceReqOpcgerList.put("FTL_searchAttributes" , searchAttributes);
+            dataSourceReqOpcgerList.put("FTL_fieldAttributes"  , fieldAttributes);
+
+            dataSourceRespOpcgerList = new HashMap<>();
+            dataSourceRespOpcgerList.put("FTL_package" , "mx.t2i.sabe.opcger.ws.model");
+            dataSourceRespOpcgerList.put("FTL_RespList"   , "RespOpcgerList");
+            dataSourceRespOpcgerList.put("FTL_ResultList"   , "ResultOpcgerList");
+            dataSourceRespOpcgerList.put("FT_respList"   , "respOpcgerList");
+            dataSourceRespOpcgerList.put("FTL_searchAttributes" , searchAttributes);
+            dataSourceRespOpcgerList.put("FTL_fieldAttributes"  , fieldAttributes);
+
+            dataSourceOpcgerService = new HashMap<>();
+            dataSourceOpcgerService.put("FTL_package" , "mx.t2i.tiigcaye.service"); // Revisar sino falta .criteria
+            dataSourceOpcgerService.put("FTL_Service"   , "OpcgerService");
+            dataSourceOpcgerService.put("FTL_CoreService"   , "Opcgerx0CoreService");
+            dataSourceOpcgerService.put("FTL_coreService"   , "opcgerx0CoreService");
+            dataSourceOpcgerService.put("FTL_Model"   , "Opcgerx0");
+            dataSourceOpcgerService.put("FT_respList"   , "respOpcgerList");
+            dataSourceOpcgerService.put("FTL_searchAttributes" , searchAttributes);
+            dataSourceOpcgerService.put("FTL_fieldAttributes"  , fieldAttributes);
+
+            dataSourceCatramosDTO = new HashMap<>();
+            dataSourceCatramosDTO.put("FTL_package" , "mx.t2i.tiigcaye.service.dto");
+            dataSourceCatramosDTO.put("FTL_CatDTO"   , "CatramosDTO");
+            dataSourceCatramosDTO.put("FTL_searchAttributes" , searchAttributes);
+            dataSourceCatramosDTO.put("FTL_fieldAttributes"  , fieldAttributes);
+            
+            dataSourceOpcgerDTO = new HashMap<>();
+            dataSourceOpcgerDTO.put("FTL_package" , "mx.t2i.tiigcaye.service.dto");
+            dataSourceOpcgerDTO.put("FTL_ClassDTO" , "OpcgerDTO");
+            dataSourceOpcgerDTO.put("FTL_CatDTO" , "CatramosDTO");
+            dataSourceOpcgerDTO.put("FTL_catDTO" , "catramosDTO");
+            dataSourceOpcgerDTO.put("FTL_Cat" , "Catramos");
+            dataSourceOpcgerDTO.put("FTL_cat" , "catramos");
+
+            dataSourceCatramosResource = new HashMap<>();
+            dataSourceCatramosResource.put("FTL_package" , "mx.t2i.tiigcaye.web.rest");
+            dataSourceCatramosResource.put("FTL_CatClass" , "CatramosResource");
+            dataSourceCatramosResource.put("FTL_Cat" , "Catramos");
+            dataSourceCatramosResource.put("FTL_cat" , "catramos");
+            dataSourceCatramosResource.put("FTL_CatDTO" , "CatramosDTO");
+            dataSourceCatramosResource.put("FTL_catDTO" , "catramosDTO");
+            
+            dataSourceOpcgerResource = new HashMap<>();
+            dataSourceOpcgerResource.put("FTL_package" , "mx.t2i.tiigcaye.web.rest");
+            dataSourceOpcgerResource.put("FTL_Class" , "OpcgerResource");
+            dataSourceOpcgerResource.put("FTL_opcGer" , "t2iSabeOpcger");
+            dataSourceOpcgerResource.put("FTL_model" , "opcger");
+            dataSourceOpcgerResource.put("FTL_Model" , "Opcger");
+            dataSourceOpcgerResource.put("FTL_Service" , "OpcgerService");
+            dataSourceOpcgerResource.put("FTL_service" , "opcgerService");
+            dataSourceOpcgerResource.put("FTL_OpcDTO" , "OpcgerDTO");
+            dataSourceOpcgerResource.put("FTL_opcDTO" , "opcgerDTO");
+          
+            /* Regardless if Data Model is a Map that contains, let's say, a "javaName" and "javaType" keys, or it's a JavaBean as shown above, 
+             * in the template you can use ${searchAttributes.title}. The root itself need not be a Map either; 
+             * it could be an object with getJavaName() and getJavaType() methods too.
+             */
+            searchAttributes.add(new FtlAttribute("ramsubramo", "Integer", "null"));
+            searchAttributes.add(new FtlAttribute("moneda"    , "Integer", "null"));
+            searchAttributes.add(new FtlAttribute("numnorma"  , "Integer", "null"));
+            searchAttributes.add(new FtlAttribute("finivig"   , "Date"   , "null"));
+            searchAttributes.add(new FtlAttribute("descnorm"  , "String" , "null"));
+
+            fieldAttributes.add(new FtlAttribute("valor01", "Double", "null"));
+            fieldAttributes.add(new FtlAttribute("valor02", "Double", "null"));
+            fieldAttributes.add(new FtlAttribute("valor03", "Double", "null"));
+            fieldAttributes.add(new FtlAttribute("valor04", "Double", "null"));
+            fieldAttributes.add(new FtlAttribute("valor05", "Double", "null"));
+            fieldAttributes.add(new FtlAttribute("valor06", "Double", "null"));
+            fieldAttributes.add(new FtlAttribute("valor07", "Double", "null"));
+            fieldAttributes.add(new FtlAttribute("valor08", "Double", "null"));
+            fieldAttributes.add(new FtlAttribute("valor09", "Double", "null"));
+            fieldAttributes.add(new FtlAttribute("valor10", "Double", "null"));
+            fieldAttributes.add(new FtlAttribute("valor11", "Double", "null"));
+            fieldAttributes.add(new FtlAttribute("valor12", "Double", "null"));
+            fieldAttributes.add(new FtlAttribute("descval01", "String", "null"));
+            fieldAttributes.add(new FtlAttribute("descval02", "String", "null"));
+            fieldAttributes.add(new FtlAttribute("descval03", "String", "null"));
+            fieldAttributes.add(new FtlAttribute("descval04", "String", "null"));
+            fieldAttributes.add(new FtlAttribute("descval05", "String", "null"));
+            fieldAttributes.add(new FtlAttribute("descval06", "String", "null"));
+            fieldAttributes.add(new FtlAttribute("descval07", "String", "null"));
+            fieldAttributes.add(new FtlAttribute("descval08", "String", "null"));
+            fieldAttributes.add(new FtlAttribute("descval09", "String", "null"));
+            fieldAttributes.add(new FtlAttribute("descval10", "String", "null"));
+            fieldAttributes.add(new FtlAttribute("descval11", "String", "null"));
+            fieldAttributes.add(new FtlAttribute("descval12", "String", "null"));
+            fieldAttributes.add(new FtlAttribute("nombrel", "String", "null"));
+            fieldAttributes.add(new FtlAttribute("moneda_i", "String", "null"));
+
+        }
+
+        public void process() throws TemplateException, IOException
+        {
+            //Console or File output ( https://freemarker.apache.org/docs/pgui_quickstart_merge.html )
+            /* As you might already know, data-model + template = output. We already have a data-model (dataSource) and a template (ftlOpcgerx0),
+             * so to get the output we have to merge them. This is done by the process method of the template. 
+             * It takes the data-model and a Writer as parameters. It writes the produced output to the Writer
+             */
+
+            Writer consoleOpcgerx0 = new OutputStreamWriter(System.out);
+            ftlOpcgerx0.process(dataSourceOpcgerx0, consoleOpcgerx0);
+            consoleOpcgerx0.flush();
+
+            Writer consoleOpcgerx0VO = new OutputStreamWriter(System.out);
+            ftlOpcgerx0VO.process(dataSourceOpcgerx0VO, consoleOpcgerx0VO);
+            consoleOpcgerx0VO.flush();
+
+            Writer consoleOpcgerx0CoreService = new OutputStreamWriter(System.out);
+            ftlOpcgerx0CoreService.process(dataSourceOpcgerx0CoreService, consoleOpcgerx0CoreService);
+            consoleOpcgerx0CoreService.flush();
+
+            Writer consoleResultOpcgerList = new OutputStreamWriter(System.out);
+            ftlResultOpcgerList.process(dataSourceResultOpcgerList, consoleResultOpcgerList);
+            consoleResultOpcgerList.flush();
+
+            Writer consoleReqOpcgerList = new OutputStreamWriter(System.out);
+            ftlReqOpcgerList.process(dataSourceReqOpcgerList, consoleReqOpcgerList);
+            consoleReqOpcgerList.flush();
+
+            Writer consoleRespOpcgerList = new OutputStreamWriter(System.out);
+            ftlRespOpcgerList.process(dataSourceRespOpcgerList, consoleRespOpcgerList);
+            consoleRespOpcgerList.flush();
+
+
+            Writer consoleOpcgerService = new OutputStreamWriter(System.out);
+            ftlOpcgerService.process(dataSourceOpcgerService, consoleOpcgerService);
+            consoleOpcgerService.flush();
+
+            Writer consoleCatramosDTO = new OutputStreamWriter(System.out);
+            ftlCatramosDTO.process(dataSourceCatramosDTO, consoleCatramosDTO);
+            consoleCatramosDTO.flush();
+
+            Writer consoleOpcgerDTO = new OutputStreamWriter(System.out);
+            ftlOpcgerDTO.process(dataSourceOpcgerDTO, consoleOpcgerDTO);
+            consoleOpcgerDTO.flush();
+
+          /*  Writer consoleCatramosResource = new OutputStreamWriter(System.out);
+            ftlCatramosResource.process(dataSourceCatramosResource, consoleCatramosResource);
+            consoleCatramosResource.flush();
+            */
+
+            Writer consoleCatramosResource = new OutputStreamWriter(System.out);
+            ftlCatramosResource.process(dataSourceCatramosResource, consoleCatramosResource);
+            consoleCatramosResource.flush();
+
+            Writer consoleOpcgerResource = new OutputStreamWriter(System.out);
+            ftlOpcgerResource.process(dataSourceOpcgerDTO, consoleOpcgerDTO);//(dataSourceOpcgerResource, consoleOpcgerResource);
+            consoleOpcgerResource.flush();
+
+        }
+
+        public void output() throws IOException, TemplateException
+        {
+            // File output
+            Writer outputFileOpcgerx0 = new FileWriter (new File(Config.OUTPUT_PATH + outNameOpcgerx0));
+            ftlOpcgerx0.process(dataSourceOpcgerx0, outputFileOpcgerx0);
+            outputFileOpcgerx0.flush();
+            outputFileOpcgerx0.close();
+
+            Writer outputFileOpcgerx0VO = new FileWriter (new File(Config.OUTPUT_PATH + outNameOpcgerx0VO));
+            ftlOpcgerx0VO.process(dataSourceOpcgerx0VO, outputFileOpcgerx0VO);
+            outputFileOpcgerx0VO.flush();
+            outputFileOpcgerx0VO.close();
+        
+            Writer outputFileOpcgerx0CoreService = new FileWriter (new File(Config.OUTPUT_PATH + outNameOpcgerx0CoreService));
+            ftlOpcgerx0CoreService.process(dataSourceOpcgerx0CoreService, outputFileOpcgerx0CoreService);
+            outputFileOpcgerx0CoreService.flush();
+            outputFileOpcgerx0CoreService.close();
+
+            Writer outputFileResultOpcgerList = new FileWriter (new File(Config.OUTPUT_PATH + outNameResultOpcgerList));
+            ftlResultOpcgerList.process(dataSourceResultOpcgerList, outputFileResultOpcgerList);
+            outputFileResultOpcgerList.flush();
+            outputFileResultOpcgerList.close();
+
+            Writer outputFileReqOpcgerList = new FileWriter (new File(Config.OUTPUT_PATH + outNameReqOpcgerList));
+            ftlReqOpcgerList.process(dataSourceReqOpcgerList, outputFileReqOpcgerList);
+            outputFileReqOpcgerList.flush();
+            outputFileReqOpcgerList.close();
+
+            Writer outputFileRespOpcgerList = new FileWriter (new File(Config.OUTPUT_PATH + outNameRespOpcgerList));
+            ftlRespOpcgerList.process(dataSourceRespOpcgerList, outputFileRespOpcgerList);
+            outputFileRespOpcgerList.flush();
+            outputFileRespOpcgerList.close();
+
+            
+            Writer outputFileOpcgerService = new FileWriter (new File(Config.OUTPUT_PATH + outNameOpcgerService));
+            ftlOpcgerService.process(dataSourceOpcgerService, outputFileOpcgerService);
+            outputFileOpcgerService.flush();
+            outputFileOpcgerService.close();
+            
+            Writer outputFileCatramosDTO = new FileWriter (new File(Config.OUTPUT_PATH + outNameCatramosDTO));
+            ftlCatramosDTO.process(dataSourceCatramosDTO, outputFileCatramosDTO);
+            outputFileCatramosDTO.flush();
+            outputFileCatramosDTO.close();
+            
+            Writer outputFileOpcgerDTO = new FileWriter (new File(Config.OUTPUT_PATH + outNameOpcgerDTO));
+            //ftlOpcgerDTO.process(dataSourceOpcgerDTO, outputFileOpcgerDTO);
+            outputFileOpcgerDTO.flush();
+            outputFileOpcgerDTO.close();
+            
+            /* Writer outputFileCatramosResource = new FileWriter (new File(Config.OUTPUT_PATH + outNameCatramosResource));
+            ftlCatramosResource.process(dataSourceCatramosResource, outputFileCatramosResource);
+            outputFileCatramosResource.flush();
+            outputFileCatramosResource.close();
+            */
+            
+            Writer outputFileCatramosResource = new FileWriter (new File(Config.OUTPUT_PATH + outNameCatramosResource));
+            ftlCatramosResource.process(dataSourceCatramosResource, outputFileCatramosResource);
+            outputFileCatramosResource.flush();
+            outputFileCatramosResource.close();
+
+            Writer outputFileOpcgerResource = new FileWriter (new File(Config.OUTPUT_PATH + outNameOpcgerResource));
+            ftlOpcgerResource.process(dataSourceOpcgerResource, outputFileOpcgerResource);
+            outputFileOpcgerResource.flush();
+            outputFileOpcgerResource.close();
+        }
+}

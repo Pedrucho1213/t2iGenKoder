@@ -1,0 +1,37 @@
+Plantilla: GenInteropHDI_core_model_Cobgmcc0.def
+
+#importList
+
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/Core.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model/Cobgmcc0.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model
+FTL_Model: Cobgmcc0
+FTL_instanceOf: Cobgmcc0
+FTL_extends: mx.t2i.tekhne.core.model.BaseInterfaceModel
+
+#attributesObjMap
+"ndepend", "Integer", "null"
+"cvcob", "Integer", "null"
+"cvcobadi", "Integer", "null"
+"nombrecob", "String", "null"
+"limitemax", "Integer", "null"
+"deducible", "Double", "null"
+"pmaanual", "Double", "null"
+"epmaanual", "Double", "null"
+"edadcalc", "Integer", "null"
+"pzoseg", "Integer", "null"
+"pzopago", "Integer", "null"
+"sa", "Double", "null"
+"coaseguro", "Double", "null"
+"finivig", "Date", "null"
+"ftervig", "Date", "null"
+"nivelhosp", "Integer", "null"
+"nivelhosp_i", "String", "null"
+"zonahosp", "Integer", "null"
+"zonahosp_i", "String", "null"
+"tpdeduc", "Integer", "null"
+"tpdeduc_i", "String", "null"
+
+#

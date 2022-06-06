@@ -1,0 +1,25 @@
+<div fxLayout="row" fxLayoutAlign="start center" mat-dialog-title>
+  <h2 *ngIf="title" class="headline m-0" fxFlex="auto" appTranslate="{{ title }}">Delete</h2>
+
+  <button class="text-secondary" mat-dialog-close mat-icon-button type="button">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<mat-divider class="-mx-6 text-border"></mat-divider>
+
+<form name="deleteForm" (ngSubmit)="updateComponent!.doDeleteIdVal()">
+  <mat-dialog-content fxLayout="column" fxLayoutGap="8px" class="py-3">
+    <app-opcger-delete [id]="id" [value]="value" [message]="message" (auxSave)="auxSave($event)"></app-opcger-delete>
+  </mat-dialog-content>
+
+  <mat-dialog-actions fxLayoutAlign="end">
+    <button type="button" mat-raised-button mat-dialog-close color="warn" data-dismiss="modal" (click)="cancel()">
+      <mat-icon>block</mat-icon>&nbsp;<span appTranslate="entity.action.cancel">Cancel</span>
+    </button>
+
+    <button type="submit" mat-raised-button mat-dialog-close color="primary" id="app-confirm-delete" data-cy="entityConfirmDeleteButton">
+      <mat-icon>delete</mat-icon>&nbsp;<span appTranslate="entity.action.delete">Delete</span>
+    </button>
+  </mat-dialog-actions>
+</form>

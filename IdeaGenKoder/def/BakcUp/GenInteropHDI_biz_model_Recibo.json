@@ -1,0 +1,50 @@
+Plantilla: GenInteropHDI_ws_model_Recibo.def
+
+[
+   {
+      "importList":[
+        "import java.util.Date",
+        "import java.util.List",
+        "import javax.xml.bind.annotation.XmlElement",
+        "import org.springframework.beans.factory.annotation.Autowired"
+
+      ]
+   },
+   {
+     "respListObjMap":{
+        "respListFtlFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/BizModel.ftl.java",
+        "respListOutFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model/Recibo.java",
+        "FTL_package": "mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model",
+        "FTL_Model": "Recibo",
+        "FTL_instanceOf": "Recibo",
+        "FTL_extends": "mx.t2i.tekhne.core.model.RootObject"
+
+
+        } 
+      },
+       {
+      "searchAttributes":[
+  
+      ]
+   },
+    {
+      "attributesObjMap":[
+        {"nombre": "folioRecibo", "tipo": "Integer", "valor": "null"},
+        {"nombre": "fechaEmisionRbo", "tipo": "Date", "valor": "null"},
+        {"nombre": "fPago", "tipo": "Date", "valor": "null"},
+        {"nombre": "idTipoRecibo", "tipo": "Integer", "valor": "null"},
+        {"nombre": "idStatusRecibo", "tipo": "Integer", "valor": "null"},
+        {"nombre": "fStatusRecibo", "tipo": "Date", "valor": "null"},
+        {"nombre": "descrStatusRecibo", "tipo": "String", "valor": "null"},
+        {"nombre": "importe", "tipo": "Double", "valor": "null"},
+        {"nombre": "recargoRecibo", "tipo": "Double", "valor": "null"},
+        {"nombre": "gastoExpedicionRbo", "tipo": "Double", "valor": "null"},
+        {"nombre": "inicioVigenciaRecibo", "tipo": "Date", "valor": "null"},
+        {"nombre": "finVigenciaRecibo", "tipo": "Date", "valor": "null"},
+        {"nombre": "primaTotalRecibo", "tipo": "Double", "valor": "null"},
+        {"nombre": "comisionAgente", "tipo": "Double", "valor": "null"},
+        {"nombre": "impuestoRecibo", "tipo": "Double", "valor": "null"}
+
+      ]
+    }
+]

@@ -1,0 +1,40 @@
+Plantilla: GenInteropHDI_ws_model_RespRegistrarSolicitud.def
+
+[
+   {
+      "importList":[
+        "import java.util.ArrayList;",
+        "import java.util.List;",
+        "import javax.xml.bind.annotation.XmlElement;",
+        "import org.springframework.beans.factory.annotation.Autowired;",
+        "import javax.xml.bind.annotation.XmlAccessType",
+        "import javax.xml.bind.annotation.XmlAccesorType",
+        "import javax.xml.bind.annotation.XmlRootElement"
+
+      ]
+   },
+   {
+     "respListObjMap":{
+        "respListFtlFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model/RespWsModel.ftl.java",
+        "respListOutFileName": "src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model/RespRegistrarSolicitud.java",
+        "FTL_package": "mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model",
+        "FTL_Model": "RespRegistrarSolicitud",
+        "FTL_instanceOf": "RespCliente"
+
+
+        } 
+      },
+       {
+      "searchAttributes":[
+  
+      ]
+   },
+    {
+      "attributesObjMap":[
+        {"nombre": "respCliente", "tipo": "RespCliente", "valor": "null"},
+        {"nombre": "respPoliza", "tipo": "RespPoliza", "valor": "null"}
+
+
+      ]
+    }
+]

@@ -1,0 +1,27 @@
+Plantilla: GenInteropHDI_biz_service_RegistrarSolicitudService.def
+
+#importList
+import mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model.Cliente;
+import mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.model.Catclix0;
+import mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.core.service.Catclix0CoreService;
+import mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model.RespCliente;
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.service/RegistrarSolicitudService.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.service/RegistrarSolicitudService.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.service
+FTL_Model: RegistrarSolicitudService
+FTL_model: registrarSolicitudService
+FTL_extends: mx.t2i.tekhne.core.model.RootObject
+FTL_CoreService: Catclix0CoreService
+FTL_coreService: catclix0CoreService
+FTL_coreModel: catclix0CoreModel
+FTL_core: catclix0
+FTL_Core: Catclix0
+
+#attributesObjMap
+"cliente", "Cliente", "null"
+"asegurado", "Asegurado", "null"
+"cobertura, "Cobertura", "null"
+
+#

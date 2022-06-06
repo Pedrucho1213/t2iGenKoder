@@ -1,0 +1,25 @@
+Plantilla: GenInteropHDI_ws_model_ReqRegistrarSolicitud.def
+
+#importList
+import java.util.List;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import org.springframework.beans.factory.annotation.Autowired;
+import mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model.Cliente;
+import mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.biz.model.Poliza;
+
+#respListObjMap
+respListFtlFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model/RespWsModel.ftl.java
+respListOutFileName: src.main.java.mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model/ReqRegistrarSolicitud.java
+FTL_package: mx.t2i.t2iInteropHDI.sabe.emi.registrarSolicitud.ws.model
+FTL_Model: ReqRegistrarSolicitud
+FTL_instanceOf: ReqRegistrarSolicitud
+
+#attributesObjMap
+"cliente", "Cliente", "null"
+"poliza", "Poliza", "null"
+
+#
