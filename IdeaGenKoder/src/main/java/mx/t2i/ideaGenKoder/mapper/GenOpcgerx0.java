@@ -15,26 +15,18 @@ import freemarker.template.Configuration;
 import freemarker.template.MalformedTemplateNameException;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
-import freemarker.template.TemplateExceptionHandler;
 import freemarker.template.TemplateNotFoundException;
 import mx.t2i.ideaGenKoder.Config;
-import mx.t2i.ideaGenKoder.model.Blog;
-import mx.t2i.ideaGenKoder.model.BlogUrl;
 import mx.t2i.ideaGenKoder.model.FtlAttribute;
 import mx.t2i.ideaGenKoder.model.ImportArray;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.File;
 import java.lang.String;
 
-import com.fasterxml.jackson.databind.ObjectMapper;// in play 2.3
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
+import mx.t2i.ideaGenKoder.util.DefEntityReader;
 
 
 public class GenOpcgerx0 {

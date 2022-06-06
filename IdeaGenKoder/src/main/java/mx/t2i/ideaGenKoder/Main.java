@@ -2,29 +2,10 @@ package mx.t2i.ideaGenKoder;
 
 import java.io.IOException;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.File;
 import java.lang.String;
 
 import freemarker.template.TemplateException;
 import mx.t2i.ideaGenKoder.mapper.GenOpcgerx0;
-import mx.t2i.ideaGenKoder.mapper.GenSampleBlog;
-import mx.t2i.ideaGenKoder.mapper.DefEntityReader;
-
-import mx.t2i.ideaGenKoder.model.Post;
-import mx.t2i.ideaGenKoder.model.Tag;
-
-import java.io.InputStreamReader;
-import java.io.InputStream;
-import java.io.FileInputStream;
-import java.util.Iterator;
-
-import com.fasterxml.jackson.databind.ObjectMapper;// in play 2.3
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonToken;
-
 
 
 public class Main {

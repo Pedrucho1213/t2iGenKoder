@@ -15,23 +15,19 @@ import freemarker.template.Configuration;
 import freemarker.template.MalformedTemplateNameException;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
-import freemarker.template.TemplateExceptionHandler;
 import freemarker.template.TemplateNotFoundException;
 import mx.t2i.ideaGenKoder.Config;
-import mx.t2i.ideaGenKoder.model.Blog;
-import mx.t2i.ideaGenKoder.model.BlogUrl;
 import mx.t2i.ideaGenKoder.model.FtlAttribute;
 import mx.t2i.ideaGenKoder.model.ImportArray;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-import com.fasterxml.jackson.databind.ObjectMapper;// in play 2.3
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
 
-public class DefEntityReader {
+public class DefEntityReader2 {
 
         private Configuration config;
         private List<FtlAttribute> searchAttributes;///searchAttributesList
@@ -103,7 +99,7 @@ public class DefEntityReader {
         private Map<String, String> dataFileBizService = new HashMap<>();
         private Map<String, String> dataFileWebService = new HashMap<>();        
 
-        public DefEntityReader() {
+        public DefEntityReader2() {
             searchAttributes = new ArrayList<FtlAttribute>();
             fieldAttributes = new ArrayList<FtlAttribute>();
             importArray = new ArrayList<ImportArray>();
