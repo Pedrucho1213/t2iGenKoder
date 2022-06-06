@@ -1,12 +1,14 @@
 package mx.t2i.ideaGenKoder.util;
 
 import mx.t2i.ideaGenKoder.mapper.GenOpcgerx0;
+import mx.t2i.ideaGenKoder.model.FtlAttribute;
 import mx.t2i.ideaGenKoder.model.ImportArray;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 
 public class DefEntityReader extends GenOpcgerx0 {
 
@@ -205,5 +207,43 @@ public class DefEntityReader extends GenOpcgerx0 {
             e.printStackTrace();
         }
     }
+    protected void readAttributes(BufferedReader br, String cabeceraSeccion, String line, List<FtlAttribute> ftlAttributes) throws IOException {
+        System.out.println("attributesObjMap: " + line);
+        int k = 0;
+        int finType, finDato, ixValue = 0;
+        String datoValor = "";
+        String tipo = "";
+        String dato = "";
+        String valor = "";
+        while ((line.length() > 0) || !(line.contains("#"))) { //line.contains(",") &&   //&& !(line.contains("") ) ) { //contains(""   || !(line.length()>0)
+            System.out.println("*Valor de: " + cabeceraSeccion + " " + line);
+            if (line.length() == 0)
+                break;
+            finType = line.indexOf(" ");
+            tipo = line.substring(1, finType - 2);
+            //System.out.println("tipo:" + tipo);
+            datoValor = line.substring(finType + 1, line.length());
+            //System.out.println("DatoValor::" + datoValor);
+            finDato = datoValor.indexOf(" ");
+            dato = datoValor.substring(1, finDato - 2);// line.substring(line.indexOf(" ")+2 ,
+            valor = datoValor.substring(finDato + 2, datoValor.length() - 1);
+            //System.out.println("datoValor:" + k +" " +datoValor);
+            //System.out.println("dato:"+ dato+ "--- Valor: "+valor);
+            //System.out.println( line.substring(0,finType) + " ---" );//+ datoValor.substring(line.indexOf(" ")+2 , datoValor.lenght() ) );
+            //attributesDefMap.put(String.valueOf( k ),line);//line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
+
+            //System.out.println("Valor de: "+cabeceraSeccion + "línea: " +k +": "+line +"(line.length()"+(line.length()));
+            ftlAttributes.add(new FtlAttribute(tipo, dato, valor));
+            //fieldAttributes.add(new FtlAttribute("respCliente", "String", "null"));
+            finType = 0;
+            finDato = 0;//,ixValu
+            k++;
+            line = br.readLine();
+            if (line.length() == 0)
+                break;
+        }
+
+    }
+
 
 }
