@@ -11,9 +11,9 @@ import java.io.IOException;
 public class DefEntityReader extends GenOpcgerx0 {
 
 
-    public void inputData(String file){
+    public void inputData(String file) {
 
-        String cabeceraSeccion  = "";
+        String cabeceraSeccion = "";
 
         String[] cases = {
                 "entityObjMap"
@@ -32,31 +32,30 @@ public class DefEntityReader extends GenOpcgerx0 {
                 , "WebService"
                 , "importList"
         };
-        int i,j;
-        j=0;
+        int i, j;
+        j = 0;
 
-        try(
-                BufferedReader br = new BufferedReader(new FileReader(file)))
-        {
+        try (
+                BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
 
             while ((line = br.readLine()) != null) {
                 if (line.contains("#")) {
-                    cabeceraSeccion=line.substring(1,line.length());
-                    System.out.println("Cabecera: "+cabeceraSeccion);
-                    j=100;
-                    for(i = 0; i < cases.length; i++) {
-                        if(cabeceraSeccion.equals(cases[i]))
-                            j=i;
+                    cabeceraSeccion = line.substring(1, line.length());
+                    System.out.println("Cabecera: " + cabeceraSeccion);
+                    j = 100;
+                    for (i = 0; i < cases.length; i++) {
+                        if (cabeceraSeccion.equals(cases[i]))
+                            j = i;
                     }
-                    System.out.println("indice out: "+j);
+                    System.out.println("indice out: " + j);
                     line = br.readLine();
-                    switch(j) {
+                    switch (j) {
                         case 0: //
                             System.out.println("entityDefMap");
                             while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                System.out.println("Valor de: "+cabeceraSeccion + " " +line);
-                                entityDefMap.put(line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                entityDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
                                 line = br.readLine();
                             }
                             System.out.println(entityDefMap.keySet());
@@ -64,8 +63,8 @@ public class DefEntityReader extends GenOpcgerx0 {
                         case 1: //
                             System.out.println("entityPojoDefMap");
                             while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                System.out.println("Valor de: "+cabeceraSeccion + " " +line);
-                                entityPojoDefMap.put(line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                entityPojoDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
                                 line = br.readLine();
                             }
                             System.out.println(entityPojoDefMap.keySet());
@@ -73,16 +72,16 @@ public class DefEntityReader extends GenOpcgerx0 {
                         case 2:
                             System.out.println("coreServiceDefMap");
                             while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                System.out.println("Valor de: "+cabeceraSeccion + " " +line);
-                                coreServiceDefMap.put(line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                coreServiceDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
                                 line = br.readLine();
                             }
                             System.out.println(coreServiceDefMap.keySet());
                             break;
                         case 3: //
                             while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                System.out.println("Valor de: "+cabeceraSeccion + " " +line);
-                                resultListDefMap.put(line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                resultListDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
                                 line = br.readLine();
                             }
                             System.out.println(resultListDefMap.keySet());
@@ -90,8 +89,8 @@ public class DefEntityReader extends GenOpcgerx0 {
                         case 4:
                             System.out.println("reqListDefMap");
                             while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                System.out.println("Valor de: "+cabeceraSeccion + " " +line);
-                                reqListDefMap.put(line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                reqListDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
                                 line = br.readLine();
                             }
                             System.out.println(reqListDefMap.keySet());
@@ -99,8 +98,8 @@ public class DefEntityReader extends GenOpcgerx0 {
                         case 5:
                             System.out.println("#respListDefMap");
                             while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                System.out.println("Valor de: "+cabeceraSeccion + " " +line);
-                                respListDefMap.put(line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                respListDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
                                 line = br.readLine();
                             }
                             System.out.println(respListDefMap.keySet());
@@ -113,8 +112,8 @@ public class DefEntityReader extends GenOpcgerx0 {
                         case 6:
                             System.out.println("#entityServiceDefMap");
                             while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                System.out.println("Valor de: "+cabeceraSeccion + " " +line);
-                                entityServiceDefMap.put(line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                entityServiceDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
                                 line = br.readLine();
                             }
                             System.out.println(respListDefMap.keySet());
@@ -122,8 +121,8 @@ public class DefEntityReader extends GenOpcgerx0 {
                         case 7:
                             System.out.println("entityDTODefMap");
                             while (line.contains(":") && !(line.contains("#"))) {//while (line.contains("FTL")) {
-                                System.out.println("Valor de: "+cabeceraSeccion + " " +line);
-                                entityDTODefMap.put(line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                entityDTODefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
                                 line = br.readLine();
                             }
                             System.out.println(entityDTODefMap.keySet());
@@ -131,8 +130,8 @@ public class DefEntityReader extends GenOpcgerx0 {
                         case 8:
                             System.out.println("entityResourceDefMap");
                             while (line.contains(":") && !(line.contains("#"))) {//while (line.contains(",")) {
-                                System.out.println("Valor de: "+cabeceraSeccion + " " +line);
-                                entityResourceDefMap.put(line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
+                                System.out.println("Valor de: " + cabeceraSeccion + " " + line);
+                                entityResourceDefMap.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
                                 line = br.readLine();
                             }
                             System.out.println(entityResourceDefMap.keySet());
@@ -150,10 +149,10 @@ public class DefEntityReader extends GenOpcgerx0 {
                         case 11:
                             System.out.println("dataFileCore");
                             while (line.contains(":") && !(line.contains("#"))) {
-                                System.out.println("Valor de: "+cabeceraSeccion);
-                                dataFileCore.put(line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
+                                System.out.println("Valor de: " + cabeceraSeccion);
+                                dataFileCore.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
                                 line = br.readLine();
-                                System.out.println("siguiente ftl de: "+line);
+                                System.out.println("siguiente ftl de: " + line);
                             }
                             System.out.println(dataFileCore.keySet());
                             System.out.println(dataFileCore.get("entityFtlFileName"));
@@ -161,8 +160,8 @@ public class DefEntityReader extends GenOpcgerx0 {
                         case 12: //
                             System.out.println("Biz");
                             while (line.contains(":") && !(line.contains("#"))) { //line.contains("entity") &&
-                                System.out.println("ftl de: "+cabeceraSeccion +" "+line);
-                                dataFileBizService.put(line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
+                                System.out.println("ftl de: " + cabeceraSeccion + " " + line);
+                                dataFileBizService.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
                                 line = br.readLine();
                             }
                             System.out.println(dataFileBizService.keySet());
@@ -171,8 +170,8 @@ public class DefEntityReader extends GenOpcgerx0 {
                         case 13: //
                             System.out.println("WebServer");
                             while (line.contains(":") && !(line.contains("#"))) {//line.contains("entity") &&
-                                System.out.println("Valor de: "+cabeceraSeccion);
-                                dataFileWebService.put(line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
+                                System.out.println("Valor de: " + cabeceraSeccion);
+                                dataFileWebService.put(line.substring(0, line.indexOf(":")), line.substring(line.indexOf(":") + 2, line.length()));
                                 line = br.readLine();
                             }
                             System.out.println(dataFileWebService.keySet());
@@ -180,10 +179,10 @@ public class DefEntityReader extends GenOpcgerx0 {
                             break;
                         case 14: //
                             System.out.println("importList");
-                            while ( (line.length() > 0) || !(line.contains("#")) ) {//line.contains("entity") &&
+                            while ((line.length() > 0) || !(line.contains("#"))) {//line.contains("entity") &&
                                 if (line.length() == 0)
                                     break;
-                                System.out.println("Valor de: "+cabeceraSeccion);
+                                System.out.println("Valor de: " + cabeceraSeccion);
                                 //fieldAttributes.add(new FtlAttribute(tipo, dato, valor));
                                 importArray.add(new ImportArray(line));
                                 //dataImportList.put(line.substring(0,line.indexOf(":")),line.substring(line.indexOf(":")+2,line.length()));
@@ -202,8 +201,7 @@ public class DefEntityReader extends GenOpcgerx0 {
                 }
                 //System.out.println("Fin de case");
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }

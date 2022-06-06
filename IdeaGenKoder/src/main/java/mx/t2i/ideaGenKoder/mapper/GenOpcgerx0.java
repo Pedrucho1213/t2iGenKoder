@@ -317,6 +317,11 @@ public class GenOpcgerx0 {
             }
         }
 
+        if (file.contains("def")|| file.contains("DEF")){
+            DefEntityReader def = new DefEntityReader();
+            def.inputData(file);
+        }
+
 
     }
 
